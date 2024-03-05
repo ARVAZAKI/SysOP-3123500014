@@ -40,6 +40,7 @@ Di samping itu, firmware akan melakukan pemindaian terhadap MBR (Master Boot Rec
 Ketika dalam proses booting terdapat bagian yang tidak sesuai atau tidak valid, maka firmware akan meneruskan ke perangkat selanjutnya sesuai dengan urutan prioritas.
 
 ###SOAL
+
 ##Apa perbedaan UEFY DAN LEGACY?
 ![App Screenshot](img/legacyuefi.webp)
 1. Struktur dan Antarmuka
