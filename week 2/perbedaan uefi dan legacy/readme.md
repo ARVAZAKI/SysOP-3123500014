@@ -31,6 +31,7 @@ Untuk saat ini sistem UEFI sudah banyak dioperasikan di semua komputer maupun la
 Jadi fungsi UEFI adalah untuk menggantikan dari kinerja BIOS yang sudah mengalami ketertinggalan zaman
 ## apa itu LEGACY?
 ![App Screenshot](img/legacy.png)
+
 <strong>LEGACY </strong>adalah alat yang membantu firmware Bios dalam memproses boot, dimana fungsi dari legacy yaitu untuk menyimpan daftar perangkat penyimpanan yang bisa untuk di boot seperti floopy disk drives, optical disk drive dan hard disk drive,
 Saat kamu menyalakan komputer, secara tidak langsung BIOS akan beroperasi dan melakukan Power On Self-Test (POST) yang ditandai dengan bunyi bip dari sistem internal, dimana suara tersebut menandakan booting berjalan dengan normal
 
@@ -39,9 +40,9 @@ Di samping itu, firmware akan melakukan pemindaian terhadap MBR (Master Boot Rec
 
 Ketika dalam proses booting terdapat bagian yang tidak sesuai atau tidak valid, maka firmware akan meneruskan ke perangkat selanjutnya sesuai dengan urutan prioritas.
 
-###SOAL
+### SOAL
 
-##Apa perbedaan UEFY DAN LEGACY?
+## Apa perbedaan UEFY DAN LEGACY?
 ![App Screenshot](img/legacyuefi.webp)
 1. Struktur dan Antarmuka
 
@@ -71,7 +72,7 @@ UEFI menyediakan antarmuka pengaturan yang lebih lengkap dan mudah digunakan dar
 
 UEFI merupakan standar industri yang aktif berkembang dan mendapatkan dukungan penuh dari para produsen perangkat keras dan perangkat lunak. Legacy BIOS, meskipun masih digunakan secara luas, sudah tidak lagi mendapatkan pembaruan rutin dan dukungan dari banyak produsen
 
-##Referensi
+## Referensi
 <ul>
 <li><a href = "https://seberkas.com/perbedaan-uefi-dan-legacy/">Apa itu UEFI?</a?></li>
 <li><a href = "https://seberkas.com/perbedaan-uefi-dan-legacy/">Apa itu LEGACY?</a?></li>
