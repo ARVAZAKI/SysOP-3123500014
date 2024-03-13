@@ -27,12 +27,15 @@ Jalankan VM Debian anda, lalu lakukan clone https://github.com/ferryastika/flops
 - Hasil pertama
 
 Running dari program Arva Zaki
+
 ![App Screenshot](img/floparva1.jpg)
 
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/flopfauzan1.jpg)
 
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/flopdhiya1.jpg)
 
 - Hasil kedua
