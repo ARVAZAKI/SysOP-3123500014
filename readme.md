@@ -16,7 +16,7 @@
 </div>
 
 <ul>
-  <li><a href="./week 1/readme.md">Week 1</a></li>
-  <li><a href="./week 2/readme.md">Week 2</a></li>
-  <li><a href="./week 3/readme.md">Week 3</a></li>
+  <li><a href="./week 1/">Week 1</a></li>
+  <li><a href="./week 2/">Week 2</a></li>
+  <li><a href="./week 3/">Week 3</a></li>
 </ul>
