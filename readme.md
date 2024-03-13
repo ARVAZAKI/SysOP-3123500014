@@ -15,4 +15,6 @@
   <hr>
 </div>
 
-- [week 1](week-1)
+<ul>
+  <li><a href="./week 1/readme.md">Week 1</a></li>
+</ul>
