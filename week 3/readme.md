@@ -40,72 +40,120 @@ Running dari program Muhammad Rafi Dhiyaulhaq
 
 - Hasil kedua
 Running dari program Arva Zaki
+
 ![App Screenshot](img/floparva2.jpg)
+
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/flopfauzan2.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/flopdhiya2.jpg)
 
 - Hasil ketiga
 Running dari program Arva Zaki
+
 ![App Screenshot](img/floparva3.jpg)
+
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/flopfauzan3.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/flopdhiya3.jpg)
 
 - Hasil keempat
 Running dari program Arva Zaki
+
 ![App Screenshot](img/floparva4.jpg)
+
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/flopfauzan4.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/flopdhiya4.jpg)
 
 - Hasil kelima
 Running dari program Arva Zaki
+
 ![App Screenshot](img/floparva5.jpg)
+
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/flopfauzan5.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/flopdhiya5.jpg)
 
 
 ##### Hasil Running program IOPS
 - Hasil pertama
 Running dari program Arva Zaki
+
 ![App Screenshot](img/ioparva1.jpg)
+
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/iopfauzan1.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/iopdhiya1.jpg)
+
 - Hasil kedua
 Running dari program Arva Zaki
+
 ![App Screenshot](img/ioparva2.jpg)
+
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/iopfauzan2.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/iopdhiya2.jpg)
+
 - Hasil ketiga
 Running dari program Arva Zaki
+
 ![App Screenshot](img/ioparva3.jpg)
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/iopfauzan3.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/iopdhiya3.jpg)
+
 - Hasil keempat
 Running dari program Arva Zaki
+
 ![App Screenshot](img/ioparva4.jpg)
+
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/iopfauzan4.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/iopdhiya4.jpg)
+
 - Hasil kelima
 Running dari program Arva Zaki
+
 ![App Screenshot](img/ioparva5.jpg)
+
 Running dari program Fauzan Abderrasheed
+
 ![App Screenshot](img/iopfauzan5.jpg)
+
 Running dari program Muhammad Rafi Dhiyaulhaq
+
 ![App Screenshot](img/iopdhiya5.jpg)
 
 ### Perbandingan
