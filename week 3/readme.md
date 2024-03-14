@@ -16,10 +16,16 @@
   </div>
 
   ## Daftar Isi
+
+1. [PPT](#ppt)
 1. [Soal](#soal)
 2. [Perbandingan](#perbandingan)
 3. [Analisa](#analisa)
 3. [Kesimpulan](#kesimpulan)
+### PPT
+
+<a href="https://www.canva.com/design/DAF_M1bVBIQ/BnkMSw858bEfKjOZEtuOwg/edit?utm_content=DAF_M1bVBIQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">PPT</a>
+
 ### Soal
 Jalankan VM Debian anda, lalu lakukan clone https://github.com/ferryastika/flops-iops. Compile dan eksekusi sesuai petunjuk. Sesuiakan jumlah thread dengan jumlah CPU yang ada di VM Debianmu. Catat hasilnya dan jelaskan arti dari hasil ekskusi. Lakukan sebanyak 5 kali. Bandingkan hasilnya antar temanmu. Buat Plot perbandinnga hasil untuk masing-masing PC di tiap kelompokmu. Analisa hasil percobaan tadi dan beri kesimpulan tentang IOPS dan FLOPS.
 
