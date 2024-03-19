@@ -242,10 +242,7 @@ Hasil Run Program Rafi Dhiyaulhaq
 </tbody>
 </table>
 
-### 6. Analisa
-Program yang dijalankan merupakan program benchmark untuk mengukur FLOPS (Floating-point Operations Per Second) dan IOPS (Input Output Operations per Second) pada CPU. Program dijalankan lima kali, masing-masing dengan jumlah inti CPU yang berbeda: 3, 2, dan 2. Hasilnya menunjukkan bahwa CPU memiliki peringkat FLOPS IOPS yang lebih tinggi ketika lebih banyak inti yang digunakan.
 
-=======
 #### Analisa
 program yang dijalankan merupakan program benchmark untuk mengukur FLOPS (Floating-point Operations Per Second) dan IOPS (Integer Operations per Second) pada CPU. Program dijalankan lima kali, masing-masing dengan jumlah inti CPU yang berbeda: 3, 2, dan 2. Hasilnya menunjukkan bahwa CPU memiliki peringkat FLOPS yang lebih tinggi ketika lebih banyak inti yang digunakan.
 Secara keseluruhan, program benchmark menunjukkan bahwa peringkat FLOPS IOPS CPU meningkat seiring dengan meningkatnya jumlah inti CPU yang digunakan. Hal ini karena program ini mampu mendistribusikan beban kerja ke beberapa inti, sehingga memungkinkannya melakukan lebih banyak operasi secara bersamaan.
