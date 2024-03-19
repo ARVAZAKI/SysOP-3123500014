@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 style="text-align: center;font-weight: bold"><br>Sistem Operasi</h1>
+  <h1 style="text-align: center;font-weight: bold">Praktikum 3<br>Sistem Operasi</h1>
   <h4 style="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
 </div>
 <br />
@@ -13,157 +13,174 @@
   </p>
 <h3 style="text-align: center;line-height: 1.5">Politeknik Elektronika Negeri Surabaya<br>Departemen Teknik Informatika Dan Komputer<br>Program Studi Teknik Informatika<br>2023/2024</h3>
   <hr><hr>
-  </div>
+</div>
 
-  ## Daftar Isi
+## Daftar Isi
+1. [Presentasi Siklus CPU](#presentasi-siklus-cpu)
+2. [Laporan Benchmark](#laporan-benchmark)
 
-1. [PPT](#ppt)
-1. [Soal](#soal)
-2. [Perbandingan](#perbandingan)
-3. [Analisa](#analisa)
-3. [Kesimpulan](#kesimpulan)
-### PPT
+## Presentasi Siklus CPU
+<a href="https://www.canva.com/design/DAF_M1bVBIQ/BnkMSw858bEfKjOZEtuOwg/edit?utm_content=DAF_M1bVBIQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Link PPT Siklus CPU</a>
 
-<a href="https://www.canva.com/design/DAF_M1bVBIQ/BnkMSw858bEfKjOZEtuOwg/edit?utm_content=DAF_M1bVBIQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">PPT</a>
+## Laporan Benchmark
+### 1. Installing gcc make git
+![App Screenshot](img/instalasi.jpeg)
+### 2. Melakukan Clone 
+![App Screenshot](img/clone.jpeg)
 
-### Soal
-Jalankan VM Debian anda, lalu lakukan clone https://github.com/ferryastika/flops-iops. Compile dan eksekusi sesuai petunjuk. Sesuiakan jumlah thread dengan jumlah CPU yang ada di VM Debianmu. Catat hasilnya dan jelaskan arti dari hasil ekskusi. Lakukan sebanyak 5 kali. Bandingkan hasilnya antar temanmu. Buat Plot perbandinnga hasil untuk masing-masing PC di tiap kelompokmu. Analisa hasil percobaan tadi dan beri kesimpulan tentang IOPS dan FLOPS.
+### 3. Run Program FLOPS
+- <strong> Run Program 1 </strong>
 
-##### Hasil Running program FLOPS
-- Hasil pertama
+Hasil Run Program Fauzan Abderrasheed
 
-Running dari program Arva Zaki
+![App Screenshot](img/flops-1.jpeg)
 
-![App Screenshot](img/floparva1.jpg)
+Hasil Run Program Arva Zaki
 
-Running dari program Fauzan Abderrasheed
+![App Screenshot](img/arva-flops-1.jpeg)
 
-![App Screenshot](img/flopfauzan1.jpg)
+Hasil Run Program Rafi Dhiyaulhaq
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+![App Screenshot](img/dhiya-flops-1.jpeg)
 
-![App Screenshot](img/flopdhiya1.jpg)
 
-- Hasil kedua
-Running dari program Arva Zaki
+- <strong> Run Program 2 </strong>
 
-![App Screenshot](img/floparva2.jpg)
+Hasil Run Program Fauzan Abderrasheed
 
-Running dari program Fauzan Abderrasheed
+![App Screenshot](img/flops-2.jpeg)
 
-![App Screenshot](img/flopfauzan2.jpg)
+Hasil Run Program Arva Zaki
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+![App Screenshot](img/arva-flops-2.jpeg)
 
-![App Screenshot](img/flopdhiya2.jpg)
+Hasil Run Program Rafi Dhiyaulhaq
 
-- Hasil ketiga
-Running dari program Arva Zaki
+![App Screenshot](img/dhiya-flops-2.jpeg)
 
-![App Screenshot](img/floparva3.jpg)
 
-Running dari program Fauzan Abderrasheed
+- <strong> Run Program 3 </strong>
 
-![App Screenshot](img/flopfauzan3.jpg)
+Hasil Run Program Fauzan Abderrasheed
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+![App Screenshot](img/flops-3.jpeg)
 
-![App Screenshot](img/flopdhiya3.jpg)
+Hasil Run Program Arva Zaki
 
-- Hasil keempat
-Running dari program Arva Zaki
+![App Screenshot](img/arva-flops-3.jpeg)
 
-![App Screenshot](img/floparva4.jpg)
+Hasil Run Program Rafi Dhiyaulhaq
 
-Running dari program Fauzan Abderrasheed
+![App Screenshot](img/dhiya-flops-3.jpeg)
 
-![App Screenshot](img/flopfauzan4.jpg)
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+- <strong> Run Program 4 </strong>
 
-![App Screenshot](img/flopdhiya4.jpg)
+Hasil Run Program Fauzan Abderrasheed
 
-- Hasil kelima
-Running dari program Arva Zaki
+![App Screenshot](img/flops-4.jpeg)
 
-![App Screenshot](img/floparva5.jpg)
+Hasil Run Program Arva Zaki
 
-Running dari program Fauzan Abderrasheed
+![App Screenshot](img/arva-flops-4.jpeg)
 
-![App Screenshot](img/flopfauzan5.jpg)
+Hasil Run Program Rafi Dhiyaulhaq
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+![App Screenshot](img/dhiya-flops-4.jpeg)
 
-![App Screenshot](img/flopdhiya5.jpg)
 
+- <strong> Run Program 5 </strong>
 
-##### Hasil Running program IOPS
-- Hasil pertama
-Running dari program Arva Zaki
+Hasil Run Program Fauzan Abderrasheed
 
-![App Screenshot](img/ioparva1.jpg)
+![App Screenshot](img/flops-5.jpeg)
 
-Running dari program Fauzan Abderrasheed
+Hasil Run Program Arva Zaki
 
-![App Screenshot](img/iopfauzan1.jpg)
+![App Screenshot](img/arva-flops-5.jpeg)
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+Hasil Run Program Rafi Dhiyaulhaq
 
-![App Screenshot](img/iopdhiya1.jpg)
+![App Screenshot](img/dhiya-flops-5.jpeg)
 
-- Hasil kedua
-Running dari program Arva Zaki
 
-![App Screenshot](img/ioparva2.jpg)
+### 4. Run Program IOPS
+- <strong> Run Program 1 </strong>
 
-Running dari program Fauzan Abderrasheed
+Hasil Run Program Fauzan Abderrasheed
 
-![App Screenshot](img/iopfauzan2.jpg)
+![App Screenshot](img/iops-1.jpeg)
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+Hasil Run Program Arva Zaki
 
-![App Screenshot](img/iopdhiya2.jpg)
+![App Screenshot](img/arva-iops-1.jpeg)
 
-- Hasil ketiga
-Running dari program Arva Zaki
+Hasil Run Program Rafi Dhiyaulhaq
 
-![App Screenshot](img/ioparva3.jpg)
+![App Screenshot](img/dhiya-iops-1.jpeg)
 
-Running dari program Fauzan Abderrasheed
 
-![App Screenshot](img/iopfauzan3.jpg)
+- <strong> Run Program 2 </strong>
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+Hasil Run Program Fauzan Abderrasheed
 
-![App Screenshot](img/iopdhiya3.jpg)
+![App Screenshot](img/iops-2.jpeg)
 
-- Hasil keempat
-Running dari program Arva Zaki
+Hasil Run Program Arva Zaki
 
-![App Screenshot](img/ioparva4.jpg)
+![App Screenshot](img/arva-iops-2.jpeg)
 
-Running dari program Fauzan Abderrasheed
+Hasil Run Program Rafi Dhiyaulhaq
 
-![App Screenshot](img/iopfauzan4.jpg)
+![App Screenshot](img/dhiya-iops-2.jpeg)
 
-Running dari program Muhammad Rafi Dhiyaulhaq
 
-![App Screenshot](img/iopdhiya4.jpg)
+- <strong> Run Program 3 </strong>
 
-- Hasil kelima
-Running dari program Arva Zaki
+Hasil Run Program Fauzan Abderrasheed
 
-![App Screenshot](img/ioparva5.jpg)
+![App Screenshot](img/iops-3.jpeg)
 
-Running dari program Fauzan Abderrasheed
+Hasil Run Program Arva Zaki
 
-![App Screenshot](img/iopfauzan5.jpg)
+![App Screenshot](img/arva-iops-3.jpeg)
 
-Running dari program Muhammad Rafi Dhiyaulhaq
+Hasil Run Program Rafi Dhiyaulhaq
 
-![App Screenshot](img/iopdhiya5.jpg)
+![App Screenshot](img/dhiya-iops-3.jpeg)
 
-### Perbandingan
+
+- <strong> Run Program 4 </strong>
+
+Hasil Run Program Fauzan Abderrasheed
+
+![App Screenshot](img/iops-4.jpeg)
+
+Hasil Run Program Arva Zaki
+
+![App Screenshot](img/arva-iops-4.jpeg)
+
+Hasil Run Program Rafi Dhiyaulhaq
+
+![App Screenshot](img/dhiya-iops-4.jpeg)
+
+
+- <strong> Run Program 5 </strong>
+
+Hasil Run Program Fauzan Abderrasheed
+
+![App Screenshot](img/iops-5.jpeg)
+
+Hasil Run Program Arva Zaki
+
+![App Screenshot](img/arva-iops-5.jpeg)
+
+Hasil Run Program Rafi Dhiyaulhaq
+
+![App Screenshot](img/dhiya-iops-5.jpeg)
+
+
+### 5. Perbandingan Hasil 
 <table>
 <thead>
 <tr>
@@ -203,11 +220,13 @@ Running dari program Muhammad Rafi Dhiyaulhaq
 </tbody>
 </table>
 
-#### Analisa
-program yang dijalankan merupakan program benchmark untuk mengukur FLOPS (Floating-point Operations Per Second) dan IOPS (Input Output Operations per Second) pada CPU. Program dijalankan lima kali, masing-masing dengan jumlah inti CPU yang berbeda: 3, 2, dan 2. Hasilnya menunjukkan bahwa CPU memiliki peringkat FLOPS yang lebih tinggi ketika lebih banyak inti yang digunakan.
+### 6. Analisa
+Program yang dijalankan merupakan program benchmark untuk mengukur FLOPS (Floating-point Operations Per Second) dan IOPS (Input Output Operations per Second) pada CPU. Program dijalankan lima kali, masing-masing dengan jumlah inti CPU yang berbeda: 3, 2, dan 2. Hasilnya menunjukkan bahwa CPU memiliki peringkat FLOPS IOPS yang lebih tinggi ketika lebih banyak inti yang digunakan.
+
 Secara keseluruhan, program benchmark menunjukkan bahwa peringkat FLOPS IOPS CPU meningkat seiring dengan meningkatnya jumlah inti CPU yang digunakan. Hal ini karena program ini mampu mendistribusikan beban kerja ke beberapa inti, sehingga memungkinkannya melakukan lebih banyak operasi secara bersamaan.
 
-#### Kesimpulan
+### 7. Kesimpulan 
 FLOPS mengukur jumlah operasi floating-point yang dapat dilakukan oleh unit pemrosesan pusat (CPU) dalam satu detik. Operasi floating-point adalah perhitungan yang melibatkan angka dengan titik desimal.
 IOPS mengukur jumlah operasi bilangan bulat yang dapat dilakukan CPU dalam satu detik. Operasi bilangan bulat adalah perhitungan yang melibatkan bilangan bulat.
+
 Kesimpulannya, FLOPS dan IOPS merupakan metrik penting untuk mengukur kinerja CPU. FLOPS penting untuk tugas-tugas yang melibatkan banyak perhitungan floating-point. IOPS penting untuk tugas-tugas yang melibatkan banyak operasi integer.
