@@ -22,6 +22,7 @@ graph LR
     Input[Input] --> Process[Process] --> Output[Output]
 ```
 
+
 Dalam konteks Linux input/output adalah :
 * Keyboard (input)
 * Layar (output)
