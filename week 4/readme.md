@@ -117,6 +117,13 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
 
    ![App Screenshot](img/ps.jpg)
 
+   Analisis : 
+   menampilkan standart output ke layar dari input system kernel,
+   PID: Ini adalah pengidentifikasi proses unik.
+   TTY: Ini adalah terminal yang terkait dengan proses.
+   TIME: Ini adalah waktu CPU yang telah digunakan oleh proses.
+   CMD: Ini adalah perintah yang digunakan untuk memulai proses.  
+   <br>
 2. Output ke layar (standar output), input dari keyboard (standard input)
    ```
     $ cat
@@ -131,6 +138,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/cat1.jpg)
 
+   Analisis : 
+   Manampilkan standart output ke layar dari input keyboard, menggunakan perintah cat untuk input dari keyboard dan ketika telah menginputkan sebuah teks akan dikembalikan berupa teks yang telah diinputkan.
+   <br>
+
 3. Input nama direktori, output tidak ada (membuat direktori baru), bila terjadi error maka tampilan error pada layar (standard error)
    ```
    $ mkdir mydir
@@ -140,6 +151,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/mkdir1.jpg)
+
+   Analisis : 
+   Membuat direktori baru menggunakan perintah mkdir (nama direktori),ketika nama direktori telah ada maka akan muncul standart error ke yang ditampilkan ke layar
+   <br>
 
 ## Percobaan 2 : Pembelokan (redirection)
 1. Pembelokan standar output
@@ -152,6 +167,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/cat2.jpg)
 
+   Analisis : 
+   Membelokan standart output menggunakan 1> dimana mengisikan sebuah teks ke dalam myfile.txt dengan perintah cat.
+   <br>
+
 2. Pembelokan standar input, yaitu input dibelokkan dari keyboard menjadi dari file
    ```
     $ cat 0< myfile.txt
@@ -161,6 +180,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/cat3.jpg)
+
+   Analisis : 
+   membelokkan standart input 0< yang telah diinputkan tadi ke dalam myfile.txt dan menampilkan standart output ke layar menggunakan perintah cat myfile.txt
+   <br>
 
 3. Pembelokan standar error untuk disimpan di file
    ```
@@ -172,6 +195,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/img1.jpg)
+
+   Analisis : 
+   membelokkan standart error ketika membuat direktori dan memasukkan teks error tersebut ka dalam file myerror.txt dengan cara memanggil error lalu dibelokkan ke file myerror.txt,seperti perintah mkdir mydir karena direktori telah ada maka akan muncul error dan menambahkan perintah 2> myerror.txt yang berfungsi untuk mamasukkan teks error ke dalam file myerror.txt
+   <br>
 
 4. Notasi 2>&1 : pembelokan standar error (2>) adalah identik dengan file descriptor 1.
    ```
@@ -186,6 +213,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img2.jpg)
 
+   Analisis : 
+   membelokkan error seperti percobaan sebelumnya menggunakan 2>&1 dan membelokkan standart error ke dalam file out.txt
+   <br>
+
 5. Notasi 1>&2 (atau >&2) : pembelokan standar output adalah sama dengan file descriptor 2 yaitu standar error
    ```
    $ echo “mencoba menulis file” 1> baru
@@ -195,6 +226,9 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/img3.jpg)
+
+   Analisis : 
+
 
 6. Notasi >> (append)
    ```
@@ -209,6 +243,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/img4.jpg)
+
+   Analisis : 
+   meninputkan teks menggunakan perintah echo dan mengirimkan teks tersebut ke surat,untuk mengakhiri input teks menggunakan notasi >> (append)
+   <br>
 
 7. Notasi here document (<<++ .... ++) digunakan sebagai pembatas input dari keyboard. Perhatikan bahwa tanda pembatas dapat digantikan dengan tanda apa saja, namun harus sama dan tanda penutup harus diberikan pada awal baris
    ```
@@ -228,12 +266,18 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img5.jpg)
 
+   Analisis : 
+   Meningputkan sebuakn teks dengan perintah cat <<++ dan cat <<%%% dan ketika selesai input harus memberi batasan sama seperti perintah contoh ++ dan %%%
+   <br>
 8. Notasi – (input keyboard) adalah representan input dari keyboard. Artinya menampilkan file 1, kemudian menampilkan input dari keyboard dan menampilkan file 2. Perhatikan bahwa notasi “-“ berarti menyelipkan input dari keyboard
   ```
   $ cat myfile.txt – surat
   ```
 
    ![App Screenshot](img/img6.jpg)
+
+   Analisis : 
+   menampilakan input dari keyboard yang ditulis ke dalam file myfile.txt 
 
 ## Percobaan 3 : Pipa (pipeline)
 
