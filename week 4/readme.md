@@ -365,7 +365,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
 
    Analisa : 
    cat < output > out digunakan untuk membaca input dari file output dan menuliskannya kembali ke file baru bernama out. perintah cat out digunakan untuk menampilkan isi file out ke layar,perintah cat < out >> out digunakan untuk menimpa isi file out dengan isi dari dirinya sendiri.
-
+   <br>
 ## Percobaan 4 : Filter
 1. Pipa juga digunakan untuk mengkombinasikan utilitas sistem untuk membentuk fungsi yang lebih kompleks
    ```
@@ -395,6 +395,9 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img14.jpg)
 
+   Analisa : 
+   memberikan input dari keyboard untuk kelas1.txt dan kelas2.txt menggunakan operator 1>,lalu menggabungkan kedua file serta mengurutkan isi dari file tersebut sesuai abjad menggunakan perintah sort.
+
 ## LATIHAN:
 
 1. Lihat daftar secara lengkap pada direktori aktif, belokkan tampilan standard output  ke file baru.
@@ -402,6 +405,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/img15.jpg)
+   
+   Analisa : 
+   Pada latihan ini perintah pertama yang digunakan adalah ls yaitu untuk melihat daftar file, lalu membelokkan output dari ls untuk disimpan ke dalam file baru, lalu cetak baru.
+   <br>
 
 2. Lihat daftar secara lengkap pada direktori /etc/passwd, belokkan tampilan standard output ke file baru tanpa menghapus file baru sebelumnya.
 
@@ -409,11 +416,19 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img16.jpg)
 
+   Analisa : 
+   Menggunakan ls untuk melihat direktori /etc/passwd, dan membelokkan outputnya ke dalam file baru tanpa mengahapus isi dari file baru sebelumnya menggunakan operator >>
+   <br>
+
 3. Urutkan file baru dengan cara membelokkan standard input.
 
    Hasil Output
    
    ![App Screenshot](img/img17.jpg)
+
+   Analisa : 
+   Membelokkan standard input dari file baru dengan perintah sort untuk mengurutkan isi dari file baru sesuai dengan huruf pertama. Disini file baru menjadi input dari perintah sort.
+   <br>
 
 4. Urutkan file baru dengan cara membelokkan standard input dan standard output ke file baru.urut.
 
@@ -421,11 +436,21 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img18.jpg)
 
+   Analisa : 
+   Membelokkan standard input dari file baru dengan perintah sort untuk mengurutkan isi dari file baru sesuai dengan huruf pertama. Disini file baru menjadi input dari perintah sort. Lalu output dari perintah sort < baru dibelokkan ke dalam file baru.urut, dan dicetak menggunakan cat.
+
+<br>
+
 5. Buatlah direktori latihan 2 sebanyak 2 kali dan belokkan standard error ke file rmdirerror.txt.
 
    Hasil Output
    
    ![App Screenshot](img/img19.jpg)
+
+   Analisa : 
+   Membuat direktori latihan2 menggunakan perintah mkdir sebanyak 2 kali, lalu akan terjadi output error. Output error tersebut dibelokkan ke dalam file rmdierror.txt menggunakan operator pembelokan standard error yaitu 2>. Lalu mencetak file rmdierror.txt menggunakan perintah cat.
+
+<br>
 
 6. Urutkan kalimat berikut :
    ```
@@ -441,6 +466,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
       Hasil Output
       
    ![App Screenshot](img/img20.jpg)
+
+   Analisa : 
+   Membuat list nama kota menggunakan notasi here document <@ dan menyimpannya ke dalam file kota.txt, lalu mengurutkan isi dari file tersebut menggunakan perintah sort.
+   <br>
   
 
 7. Hitung jumlah baris, kata dan karakter dari file baru.urut dengan menggunakan filter dan tambahkan data tersebut ke file baru.
@@ -448,6 +477,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/img21.jpg)
+
+   Analisa : 
+   Membelokkan standard input dari cat, sehingga file baru.urut menjadi input untuk perintah cat. Lalu dengan menggunakan pipeline dilanjutkan dengan perintah wc untuk menghitung jumlah baris, kata dan karakter dari file baru.urut. Output dari perintah yang tadi dibelokkan menuju file baru tanpa menghapus isi dari file baru sebelumnya menggunakan operator >>
+   <br>
 
 8. Gunakan perintah di bawah ini dan perhatikan hasilnya.
    ```
@@ -467,8 +500,26 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img22.jpg)
 
+   Analisa : 
+   Pada perintah  cat > hello.txt, membuat file baru bernama "hello.txt" dan memasukkan beberapa baris teks yang berisi kata-kata seperti "dog", "cat", "duck", dan "chicken". Kemudian, perintah  cat hello.txt | sort | uniq membaca isi dari "hello.txt", mengurutkannya secara alfabetis dengan sort, dan kemudian menghilangkan baris-baris yang sama menggunakan uniq, sehingga hanya menampilkan setiap kata sekali saja. Sementara itu, perintah $ cat hello.txt | grep "dog" | grep -v "cat" membaca isi "hello.txt", menyaring baris yang mengandung kata "dog" dengan grep, dan kemudian menghilangkan baris yang juga mengandung kata "cat" dengan menggunakan opsi -v di grep, sehingga hanya menampilkan baris yang mengandung kata "dog" namun tidak mengandung kata "cat".
+   <br>
+
 ## LAPORAN RESMI:
 
 1. Analisa hasil percobaan 1 sampai dengan 4, untuk setiap perintah jelaskan    tampilannya.
 2. Kerjakan latihan diatas dan analisa hasilnya
 3. Berikan kesimpulan dari praktikum ini.
+
+### Kesimpulan 
+- Redirection mengacu pada teknik untuk mengalihkan aliran input dan output dari suatu program. Dengan redirection, Anda dapat mengalihkan output dari sebuah perintah agar disimpan dalam file atau menggunakan output tersebut sebagai masukan untuk perintah lainnya.
+- Pipeline adalah mekanisme yang memungkinkan output dari satu perintah (program) digunakan sebagai input untuk perintah lainnya secara langsung, tanpa perlu menyimpan output ke dalam file terlebih dahulu.
+
+terdapat beberapa perintah yang digunakan dalam praktikum ini
+di antaranya : 
+
+- ``echo``  digunakan untuk mencetak atau menampilkan teks atau variabel ke terminal atau ke output standar.
+- ``cat`` digunakan untuk mencantumkan, menggabungkan, dan menulis konten atau isi file dalam output standar
+- ``more`` untuk Melihat isi suatu file dengan fasilitas melihat isi file dari atas dan untuk kebawah menggunakan tombol Enter untuk perbaris dan tombol Spasi untuk perlayar - ``sort`` Digunakan untuk mengurutkan masukannya berdasarkan urutan nomor ASCII dari karakter.
+- ``grep`` Digunakan untuk menyaring masukannya dan menampilkan baris-baris yang hanya mengandung pola yang ditentukan. Pola ini disebut regular expression.
+- ``wc`` Digunakan untuk menghitung jumlah baris, kata dan karakter dari baris-baris masukan yang diberikan kepadanya.
+- ``uniq`` Digunakan untuk menghilangkan baris-baris berurutan yang mengalami duplikasi, biasanya digabungkan dalam pipeline dengan ``sort``.
