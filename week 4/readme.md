@@ -118,7 +118,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
 
    ![App Screenshot](img/ps.jpg)
 
-   Analisis : 
+   Analisa : 
    menampilkan standart output ke layar dari input system kernel,
    PID: Ini adalah pengidentifikasi proses unik.
    TTY: Ini adalah terminal yang terkait dengan proses.
@@ -139,7 +139,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/cat1.jpg)
 
-   Analisis : 
+   Analisa : 
    Manampilkan standart output ke layar dari input keyboard, menggunakan perintah cat untuk input dari keyboard dan ketika telah menginputkan sebuah teks akan dikembalikan berupa teks yang telah diinputkan.
    <br>
 
@@ -153,7 +153,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/mkdir1.jpg)
 
-   Analisis : 
+   Analisa : 
    Membuat direktori baru menggunakan perintah mkdir (nama direktori),ketika nama direktori telah ada maka akan muncul standart error ke yang ditampilkan ke layar
    <br>
 
@@ -168,7 +168,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/cat2.jpg)
 
-   Analisis : 
+   Analisa : 
    Membelokan standart output menggunakan 1> dimana mengisikan sebuah teks ke dalam myfile.txt dengan perintah cat.
    <br>
 
@@ -182,7 +182,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/cat3.jpg)
 
-   Analisis : 
+   Analisa : 
    membelokkan standart input 0< yang telah diinputkan tadi ke dalam myfile.txt dan menampilkan standart output ke layar menggunakan perintah cat myfile.txt
    <br>
 
@@ -197,7 +197,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img1.jpg)
 
-   Analisis : 
+   Analisa : 
    membelokkan standart error ketika membuat direktori dan memasukkan teks error tersebut ka dalam file myerror.txt dengan cara memanggil error lalu dibelokkan ke file myerror.txt,seperti perintah mkdir mydir karena direktori telah ada maka akan muncul error dan menambahkan perintah 2> myerror.txt yang berfungsi untuk mamasukkan teks error ke dalam file myerror.txt
    <br>
 
@@ -214,7 +214,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img2.jpg)
 
-   Analisis : 
+   Analisa : 
    membelokkan error seperti percobaan sebelumnya menggunakan 2>&1 dan membelokkan standart error ke dalam file out.txt
    <br>
 
@@ -228,7 +228,6 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img3.jpg)
 
-   Analisis : 
 
 
 6. Notasi >> (append)
@@ -245,7 +244,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img4.jpg)
 
-   Analisis : 
+   Analisa : 
    meninputkan teks menggunakan perintah echo dan mengirimkan teks tersebut ke surat,untuk mengakhiri input teks menggunakan notasi >> (append)
    <br>
 
@@ -267,7 +266,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img5.jpg)
 
-   Analisis : 
+   Analisa : 
    Meningputkan sebuakn teks dengan perintah cat <<++ dan cat <<%%% dan ketika selesai input harus memberi batasan sama seperti perintah contoh ++ dan %%%
    <br>
 8. Notasi – (input keyboard) adalah representan input dari keyboard. Artinya menampilkan file 1, kemudian menampilkan input dari keyboard dan menampilkan file 2. Perhatikan bahwa notasi “-“ berarti menyelipkan input dari keyboard
@@ -277,7 +276,7 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
 
    ![App Screenshot](img/img6.jpg)
 
-   Analisis : 
+   Analisa : 
    menampilakan input dari keyboard yang ditulis ke dalam file myfile.txt 
 
 ## Percobaan 3 : Pipa (pipeline)
@@ -296,12 +295,15 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
 
    Hasil Output
    
-      ![App Screenshot](img/img7.jpg)
+   ![App Screenshot](img/img7.jpg)
 
    ![App Screenshot](img/img8.jpg)
 
    ![App Screenshot](img/img9.jpg)
 
+   Analisa : 
+   terdapat berbagai perintah yang dijalankan,perintah who digunakan untuk menampilkan informasi tentang user,perintah sort digunakan untuk mengurutkan sesuai nama/abjad,perintah more digunakan untuk menampilkan isi file secara per halaman.
+   <br>
 
 2. Untuk membelokkan standart output ke file, digunakan operator ">"
    ```
@@ -314,6 +316,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img10.jpg)
 
+   Analisa : 
+   Pada perintah diatas memasukan input dari keyboard yang dituju ke file hello lalu dibelokkan ke file output dengan menggunakan operator >,serta menampilkan isi dari output menggunakan perintah cat.
+   <br>
+
 3. Untuk menambahkan output ke file digunakan operator ">>"
    ```
    $ echo bye >> output
@@ -324,6 +330,9 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    
    ![App Screenshot](img/img11.jpg)
 
+   Analisa : 
+   Sama seperti diatas, namun operator >> dapat langsung digunakan untuk menambahkan output ke file.
+   <br>
 4. Untuk membelokkan standart input digunakan operator "<"
    ```
    $ cat < output
@@ -332,6 +341,10 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/img12.jpg)
+
+   Analisa : 
+   pada perintah menggunakan operator < yaitu membelokkan standart input lalu mencetakknya ke layar.
+   <br>
 
 5. Pembelokan standart input dan standart output dapat dikombinasikan tetapi tidak boleh menggunakan nama file yang sama sebagai standart input dan output.
    ```
@@ -349,6 +362,9 @@ Beberapa perintah Linux yang digunakan untuk proses penyaringan antara lain :
    Hasil Output
    
    ![App Screenshot](img/img13.jpg)
+
+   Analisa : 
+   cat < output > out digunakan untuk membaca input dari file output dan menuliskannya kembali ke file baru bernama out. perintah cat out digunakan untuk menampilkan isi file out ke layar,perintah cat < out >> out digunakan untuk menimpa isi file out dengan isi dari dirinya sendiri.
 
 ## Percobaan 4 : Filter
 1. Pipa juga digunakan untuk mengkombinasikan utilitas sistem untuk membentuk fungsi yang lebih kompleks
