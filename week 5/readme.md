@@ -98,9 +98,10 @@ Utilitas untuk melakukan pengontrolan proses dapat ditemukan pada sistem UNIX ad
 
 4. Apa yang dimaksud dengan sinyal?Apa perintah untuk mengirim sinyal?
 
-Proses dapat mengirim dan menerima sinyal dari dan ke proses lainnya. Proses
-mengirim sinyal melalui instruksi “kill” dengan format
+Sinyal adalah cara yang digunakan oleh sistem operasi untuk mengirim pesan ke proses. Sinyal ini bisa digunakan untuk berbagai hal, seperti memberhentikan proses, memberi tahu proses untuk memuat kembali konfigurasi, dan lain-lain.
+Proses mengirim sinyal untuk memberhentikan proses melalui instruksi “kill” dengan format
 kill [-nomor sinyal] PID
+
 
 5. Apa yang dimaksud dengan proses foreground dan background pada job control
 
