@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 style="text-align: center;font-weight: bold"><br>Sistem Operasi</h1>
+  <h1 style="text-align: center;font-weight: bold">praktikum 5<br>Sistem Operasi</h1>
   <h4 style="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
 </div>
 <br />
@@ -134,7 +134,7 @@ Analisa : menginstall compiler g++ dan membuat code untuk mengecek bilangan prim
 
 1. Pindah ke command line terminal (tty2) dengan menekan Ctrl+Alt+F2 dan login sebagai user
 
-![App Screenshot](img/logins.jpg))
+![App Screenshot](img/logins.jpg)
 
 2. Instruksi ps digunakan untuk melihat kondisi yang ada. PID adalah nomor identitas proses, TTY adalah nama terminal dimana proses tersebut aktif, STATA berisi S(sleeping) dan R (running), COMMAND merupakan instruksi yang digunakan $ps
 
@@ -164,7 +164,7 @@ Analisa : Digunakan untuk menampilkan proses pada user sekarang, dan juga semua 
 
 1. Pindah ke command line terminal (tty2) dengan menekan Ctrl+Alt+F2 dan login sebagai user
 
-![App Screenshot](img/logins.jpg)
+![App Screenshot](img/logins.jpg
 
 2. ketik ps -eH dan tekan enter. opsi e memilih semua proses dan opsi H menghasilkan tampilan proses secara hirearki. proses child muncul dibawah proses parent. proses child ditandai dengan awalan ebeberapa spasi $ps -eH
 
@@ -211,7 +211,7 @@ Analisa : perintah $ pstree yang kemudian ditambahkan opsi
 
 1. Pindah ke command line terminal (tty2) dengan menekan Ctrl+Alt+F2 dan login sebagai user
 
-![App Screenshot](img/logins.jpg)
+![App Screenshot](img/logins.jpg
 
 2. ketik ps -e | more dan tekan enter. opsi -e menampilkan semua proses dalam bentuk 4 kolom: PID,TTY,TIME dan CMD.
 $ps -e | more, jika halaman penuh terlihat prompt --more-- dibagian bawah screen,tekan q untuk kembali ke prompt perintah.
@@ -251,7 +251,7 @@ Analisis : prosesnya akan diawali dengan membacaan perintah $ ps yang kemudian d
 
 1. Pindah ke command line terminal (tty2) dengan menekan Ctrl+Alt+F2 dan login sebagai user
 
-![App Screenshot](img/logins.jpg)
+![App Screenshot](img/logins.jpg
 
 2. Gunakan perintah yes yang mengirim output y yang tidak pernah berhenti $yes, untuk menghentikannya tekan Ctrl+C.
 
