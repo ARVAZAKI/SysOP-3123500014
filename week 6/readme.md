@@ -25,12 +25,18 @@ Hentikan sementara job (suspend),bukan menghentikannya (terminate),tetapi menghe
 
 ![App Screenshot](img/5.1.jpg)
 
+Analisa :     Cara lain meletakkan job pada background dengan memulai job secara normal (pada foreground), stop job dan memulai lagi pada background. Gunakan perintah `yes > /dev/null` untuk memulai job baru. Hentikan sementara job (suspend), bukan menghentikannya (terminate), tetapi menghentikan sementara job sampai di restart. Untuk menghentikan sementara job gunakan *Ctrl + Z*
+
+
 
 2. untuk restart job pada foregorund, gunakan perintah fg
 ```
 $ fg
 ```
 ![App Screenshot](img/5.2.jpg)
+
+ Analisa : 
+    Perintah `fg` disini digunakan untuk me-restart job pada *foreground*.
 
 3. Shell akan menampilkan nama perintah yang diletakkan pada foreground,stop job lagi dengan Ctrl+Z. Kemudian gunakan perintah bg untuk meletakkan job pada backgroud
 ```
@@ -39,6 +45,10 @@ $ bg
 Job ini tidak bisa dihentikan menggunakan Ctrl+Z,karena job berada pada background. untuk menghentikannya,letakkan job pada foregorund dengan fg dan kemudian Ctrl+Z
 
 ![App Screenshot](img/5.3.jpg)
+
+ Analisa : 
+    Setelah instruksi `fg`, Shell akan menampilkan nama perintah yang diletakkan di *foreground*. Stop job lagi dengan *Ctrl + Z*. Kemudian gunakan perintah `bg` untuk meletakkan job pada *background*. 
+     
 
 4. Job pada background dapat digunakan untuk menampilkan teks pada terminal, dimana dapat diabaikan jika mencoba mengerjakan job lain.
 ```
@@ -50,6 +60,9 @@ untuk menghentikannya tidak dapat menggunakan Ctrl+Z. job harus dipindah ke fore
 
 ![App Screenshot](img/5.5.jpg)
 
+ Analisa : 
+    Job pada *background* dapat digunakan untuk menampilkan teks pada terminal, dimana dapat diabaikan jika mencoba mengerjakan job lain seperti perintah di atas. Untuk menghentikannya tidak dapat menggunakan *Ctrl + C*. Job harus dipindah ke *foreground* baru diberhentikan dengan cara tekan `fg` dan tekan enter, Kemudian lanjutkan dengan *Ctrl + Z* untuk menghentikan sementara
+
 5. Apabila ingin menampilkan banyak job dalam satu waktu,letakkan job pada foreground atau background dengan memberikan job id
 ```
 $ fg %2 atau $ %2
@@ -57,11 +70,17 @@ $ bg %2
 ```
 ![App Screenshot](img/5.6.jpg)
 
+ Analisa : 
+    Perintah di atas digumakan apabila ingin menjalankan banyak job dalam satu waktu, letakkan job pada *foreground* atau *background* dengan memberikan job ID. 
+
 6. tekan fg dan enter kemudian dilanjutkan dengan ctrl+z untuk menghentikan sementara
 
 ![App Screenshot](img/5.7.jpg)
 
 ![App Screenshot](img/5.8.jpg)
+
+Analisa : 
+    tekan `fg` dan tekan *Enter*, kemudian dilanjutkan dengan *Ctrl-Z* untuk menghentikan sementara
 
 7. lihat job dengan perintah ps -fae dan tekan enter kemudian hentikan proses dengan perintah kill.
 ```
@@ -74,6 +93,10 @@ $ kill -9 <nomor pid>
 ![App Screenshot](img/5.10.jpg)
 
 ![App Screenshot](img/5.11.jpg)
+
+Analisa : 
+    Lihat job dengan perintah `ps -fae` dan tekan Enter. Kemudian hentikan proses dengan perintah kill.
+
 
 ### Percobaan 6
 
@@ -172,12 +195,98 @@ perintah `$ bash` digunakan untuk mengkonversi instruksi yang dimasukkan ke dala
 perintah `$ ls` digunakan untuk menunjukkan semua file yang terletak dalam direktori aktif.
 perintah `$ sh` adalah singkatan dari Bourne Shell, yang bertindak sebagai interpreter perintah atau shell standar di unix.
 perintah `$ ps` digunakan untuk menampilkan daftar proses yang sedang berlangsung dalam sistem. Tampilan dari perintah ps mencakup empat kolom utama: PID, TTY, TIME, dan CMD.
+Perintah `$ who`digunakan untuk menampilkan daftar pengguna yang saat ini login ke sistem. Ini menampilkan informasi seperti nama pengguna, terminal yang mereka gunakan, waktu login, dan sebagainya. Perintah ini sering digunakan untuk memeriksa siapa yang sedang menggunakan sistem atau untuk melihat apakah ada pengguna yang login secara tidak sah.
 
 f. Sebutkan PID yang paling besar dan kemudian buat urut - urutan proses sampai ke PPID = 1
 
 ![App Screenshot](img/lat3.jpg)
 
 Untuk menampilkan keseluruhan proses yang berjalan kita menggunakan perintah $ps -au yang berfungsi untuk melihat seluruh proses yang berjalan dan didapatkan PID terbesar adalah 2683 dan PPID atau parent PID adalah 1162.
+
+2.  Cobalah format tampilan ps dengan opsi berikut dan perhatikan hasil tampilannya :
+    - `-f` daftar penuh
+
+![App Screenshot](img/lat4.jpg)
+
+  - `-j` format job
+
+![App Screenshot](img/lat5.jpg)
+
+  - `j` format job control
+
+![App Screenshot](img/lat6.jpg)
+
+  - `l` daftar memanjang
+
+![App Screenshot](img/lat7.jpg)
+
+  - `s` format sinyal
+
+![App Screenshot](img/lat8.jpg)
+
+  - `v` format virtual memory
+
+![App Screenshot](img/lat9.jpg)
+
+  - `X` format register i386
+
+![App Screenshot](img/lat10.jpg)
+
+3. Lakukan urutan pekerjaan berikut :
+
+    - Gunakan perintah `find` ke seluruh direktory pada sistem, belokkan output sehingga daftar direktori dialihkan ke file `directories.txt` dan daftar pesan error dialihkan ke file `errors.txt`
+
+![App Screenshot](img/lat11.jpg)
+
+
+   Gunakan perintah `sleep 5`. Apa yang terjadi dengan perintah ini ?
+
+![App Screenshot](img/lat12.jpg)
+
+- Jalankan perintah pada background menggunakan `&`
+
+![App Screenshot](img/lat13.jpg)
+
+  - Jalankan `sleep 15` pada foreground, hentikan sementara dengan Ctrl-Z dan kemudian letakkan pada background dengan `bg`. Ketikkan `jobs`. Ketikkan `ps`. Kembalikan job ke foreground dengan perintah `fg`.
+
+      ![App Screenshot](img/lat14.jpg)
+
+    - Jalankan `sleep 15` pada background menggunakan `&` dan kemudian gunakan perintah `kill` untuk menghentikan proses diikuti job number.
+
+      ![App Screenshot](img/lat15.jpg)
+
+    - Jalankan `sleep 15` pada background menggunakan `&` dan kemudian gunakan `kill` untuk menghentikan sementara proses. Gunakan `bg` untuk melanjutkan menjalankan proses.
+
+      ![App Screenshot](img/lat16.jpg)
+
+    - Jalankan `sleep 60` pada background 5 kali dan terminasi semua pada dengan menggunakan perintah `killall`.
+
+      ![App Screenshot](img/lat17.jpg)
+
+    - Gunakan perintah `ps`, `w` dan `top` untuk menunjukkan semua proses yang sedang dieksekusi.
+
+      ![App Screenshot](img/lat18.jpg)
+
+      ![App Screenshot](img/lat19.jpg)
+
+    - Gunakan perintah `ps –aeH` untuk menampilkan hierarki proses. Carilah init proses. Apakah Anda bisa identifikasi sistem daemon yang penting ? Dapatkan Anda identifikasi shell dan subproses ?
+
+      ![App Screenshot](img/lat20.jpg)
+
+      ![App Screenshot](img/lat21.jpg)
+
+      ![App Screenshot](img/lat22.jpg)
+
+    - Kombinasikan `ps –fae` dan grep, apa yang Anda lihat ?
+
+      ![App Screenshot](img/lat23.jpg)
+
+    - Jalankan proses `sleep 300` pada background. Log off komputer dan log in kembali. Lihat daftar semua proses yang berjalan. Apa yang terjadi pada proses sleep ?
+
+      ![App Screenshot](img/lat24.jpg)
+
+      ![App Screenshot](img/lat25.jpg)
+
 
 
         
