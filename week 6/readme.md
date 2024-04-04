@@ -129,6 +129,10 @@ direktori /root.
 
 ![App Screenshot](img/6.5.jpg)
 
+Analisa : 
+Perintah top berfungsi untuk mengetahui semua rincian proses yang berjalan dan beberapa fungsi lainnya. Dengan mengetikkan i pada window top maka akan menghasilkan proses yang sedang aktif sedangkan opsi Imt digunakan untuk menghilangkan atau menampilkan informasi pada bagian atas dari tampilan top. Perintah yes diatas untuk membuat proses baru. PID yang digunakan adalah 2299 dan menjalankan perintah $ renice pada terminal 1 yang berarti bahwa menggati penjadwalan prioritas dari proses ke 19 dan terlihat bahwa NI berubah menjadi 19.
+
+
 10. Tunggu beberapa saat sampai program top berubah dan terlihat pada jendela Top. pada kolom stat memperlihatkan N untuk proses 3148. Hal ini berarti bahwa penjadwalan prioritas untuk proses 3148 lebih besar/lebih lambat dari 0, proses 3149 lebih cepat.
 
 11. program top juga memiliki fungsi yang sama dengan progran renice. pilih jendela top dan tekan r,program top terdapat prompt pid to renice: tekan 3148 (ingat bahwa anda harus mengganti 3148 dengan pid anda sendiri) dan tekan enter. program top memberikan prompt Renice PID 3148 to value: tekan -19 dan enter.
@@ -208,29 +212,59 @@ Untuk menampilkan keseluruhan proses yang berjalan kita menggunakan perintah $ps
 
 ![App Screenshot](img/lat4.jpg)
 
+Analisa : 
+
+ Hasil daftar penuh berupa :
+          - UID yang menunjukkan user ID
+          - PID  menujukkan proses ID
+          - PPID yang merupkan parent dari PID
+          - C menunjukkan penggunaan CPU
+          - STATIME nenunjukkan start time atau waktu pertama kali program dijalankan
+          - TTY terminal yang digunakan untuk menjalankan proses
+          - TIME total waktu yang digunakan CPU untuk memproses
+          - CMD menunjukkan nama dari proses termasuk argument jika ada.
+
   - `-j` format job
 
 ![App Screenshot](img/lat5.jpg)
+
+Analisa : 
+Perintah tersebut menghasilkan tampilan lima kolom, yakni PID, PGID, SID, TTY, dan TIME, dengan SID muncul dua kali. PGID berarti Process Group ID, yang merujuk pada nomor kelompok proses, sementara SID, atau Session ID, mengacu pada sesi yang memuat beberapa kelompok proses di dalamnya, dimana setiap kelompok terdiri dari berbagai proses dan setiap proses dapat memiliki beberapa thread. Thread adalah unit terkecil dalam penggunaan CPU.
 
   - `j` format job control
 
 ![App Screenshot](img/lat6.jpg)
 
+Analisa : 
+ Tampilan dari hasil perintah tersebut adalah format control yang dimana terdapat TPGID yang berfungsi untuk menunjukkan control terminal proses group id, STAT untuk menunjukkan status proses, dan UID untuk menunjukkan user ID berupa nilai integer.
+
   - `l` daftar memanjang
 
 ![App Screenshot](img/lat7.jpg)
+
+Analisa : 
+Tampilan format ini yang memperlihatkan daftar secara vertikal mencakup 'f' atau flags, yang merupakan hasil dari operasi bitwise OR dari nilai numerik untuk proses yang aktif. Kolom PRI menampilkan prioritas penjadwalan proses, sementara NI menunjuk pada nilai NICE proses tersebut. Ukuran virtual dari proses dalam kilobyte ditunjukkan dalam kolom VSZ. Sedangkan kolom WCHAN mengindikasikan waiting channel, yang merujuk pada alamat memori event yang sedang menunggu proses tersebut.
 
   - `s` format sinyal
 
 ![App Screenshot](img/lat8.jpg)
 
+Format ini menampilkan kolom PENDING, yang menggambarkan sinyal proses yang tertunda dalam bentuk nilai heksadesimal. Kolom BLOCKED menunjukkan nilai heksadesimal dari sinyal proses yang diblokir. Sementara itu, sinyal yang diabaikan memiliki nilai heksadesimalnya tersaji dalam kolom IGNORED. Kolom CAUGHT menyajikan nilai heksadesimal dari sinyal yang berhasil ditangkap. Dari penjelasan ini, jelas bahwa format sinyal ini menggunakan sistem bilangan heksadesimal.
+
   - `v` format virtual memory
 
 ![App Screenshot](img/lat9.jpg)
 
+  Analisa : 
+  Perintah ini digunakan untuk menunjukkan informasi proses dalam bentuk virtual memori.
+
   - `X` format register i386
 
 ![App Screenshot](img/lat10.jpg)
+
+Analisa : 
+Perintah ini akan menunjukkan informasi proses dalam bentuk format register dalam memory seperti PID,STACKP,ESP,EIP,TIMEOUT,ALARM,STAT,TTY,TIME,dan COMMAND
+
 
 3. Lakukan urutan pekerjaan berikut :
 
@@ -287,6 +321,9 @@ Untuk menampilkan keseluruhan proses yang berjalan kita menggunakan perintah $ps
 
       ![App Screenshot](img/lat25.jpg)
 
+    
+### Kesimpulan
+Praktikum ini dijalankan melalui command line, tempat seluruh prosesnya akan berlangsung. Dalam praktikum ini, dibahas pula metode untuk mengelola proses baik di latar depan (foreground) maupun latar belakang (background). Ada beragam pilihan perintah yang bisa digunakan bersama dengan fungsi ps untuk memantau proses. Lebih lanjut, kita juga bisa mengeksplorasi struktur hierarki proses menggunakan pstree untuk menampilkan proses dalam bentuk pohon. Berbagai perintah seperti ps, yes, jobs, dan kill digunakan selama praktikum ini untuk memahami dan mengelola proses yang ada.
 
 
         
