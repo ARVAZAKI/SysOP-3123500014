@@ -257,7 +257,6 @@ Format ini menampilkan kolom PENDING, yang menggambarkan sinyal proses yang tert
 
   Analisa : 
   Perintah ini digunakan untuk menunjukkan informasi proses dalam bentuk virtual memori.
-
   - `X` format register i386
 
 ![App Screenshot](img/lat10.jpg)
@@ -265,43 +264,71 @@ Format ini menampilkan kolom PENDING, yang menggambarkan sinyal proses yang tert
 Analisa : 
 Perintah ini akan menunjukkan informasi proses dalam bentuk format register dalam memory seperti PID,STACKP,ESP,EIP,TIMEOUT,ALARM,STAT,TTY,TIME,dan COMMAND
 
-
 3. Lakukan urutan pekerjaan berikut :
 
     - Gunakan perintah `find` ke seluruh direktory pada sistem, belokkan output sehingga daftar direktori dialihkan ke file `directories.txt` dan daftar pesan error dialihkan ke file `errors.txt`
 
 ![App Screenshot](img/lat11.jpg)
 
+  Analisa : 
+  berfungsi untuk membelokkan standar output berupa daftar direktori ke dalam
+file directories.txt, kemudian jika terdapat pesan error, maka akan dibelokkan
+ke dalam file errors.txt. Namun, isi file tersebut kosong, yang artinya tidak ada
+pesan error yang muncul selama proses find / dilakukan
 
    Gunakan perintah `sleep 5`. Apa yang terjadi dengan perintah ini ?
 
 ![App Screenshot](img/lat12.jpg)
 
+Analisa : 
+perintah $ sleep 5 yaitu digunakan untuk menghentikan proses
+job pada terminal selama 5 detik.
+
 - Jalankan perintah pada background menggunakan `&`
 
 ![App Screenshot](img/lat13.jpg)
 
+Analisa :
+Perintah $ sleep 5 & digunakan untuk memulai job pada background yang
+dibuktikan dengan tulisan Running.
   - Jalankan `sleep 15` pada foreground, hentikan sementara dengan Ctrl-Z dan kemudian letakkan pada background dengan `bg`. Ketikkan `jobs`. Ketikkan `ps`. Kembalikan job ke foreground dengan perintah `fg`.
 
       ![App Screenshot](img/lat14.jpg)
 
-    - Jalankan `sleep 15` pada background menggunakan `&` dan kemudian gunakan perintah `kill` untuk menghentikan proses diikuti job number.
+  Analisa : 
+  Dalam waktu 15 detik, lakukan instruksi untuk memantau proses. Ketika Anda menjalankan perintah `$jobs`, Anda akan melihat bahwa pekerjaan `sleep 15` sedang berjalan di latar belakang. Untuk memverifikasinya, jalankan perintah `$ps` untuk melihat daftar proses atau pekerjaan yang sedang berlangsung, di mana Anda akan menemukan proses `sleep`.
+
+  - Jalankan `sleep 15` pada background menggunakan `&` dan kemudian gunakan perintah `kill` untuk menghentikan proses diikuti job number.
 
       ![App Screenshot](img/lat15.jpg)
+
+    Analisa : 
+    Perintah `$sleep 15 &` digunakan untuk menjalankan pekerjaan di latar belakang. Untuk memeriksa status pekerjaan. Kemudian, perintah `$kill %1` digunakan untuk menghentikan proses `sleep 15`. Setelahnya, periksa statusnya lagi dengan perintah `$ps`, dan Anda akan melihat tulisan "Terminated" menandakan bahwa proses telah dihentikan.
+    <br>
 
     - Jalankan `sleep 15` pada background menggunakan `&` dan kemudian gunakan `kill` untuk menghentikan sementara proses. Gunakan `bg` untuk melanjutkan menjalankan proses.
 
       ![App Screenshot](img/lat16.jpg)
 
+      Analisa : 
+      Menjalan kan proses pada background,dan menghentikkan/stop proses.
+      <br>
     - Jalankan `sleep 60` pada background 5 kali dan terminasi semua pada dengan menggunakan perintah `killall`.
 
       ![App Screenshot](img/lat17.jpg)
 
+      Analisa : 
+      Perintah `$sleep 60 &` dijalankan sebanyak lima kali untuk membuat lima proses sleep di latar belakang, masing-masing dengan nomor job yang berbeda-beda. Kemudian, perintah `$killall` yang diikuti oleh nama proses digunakan untuk menghentikan semua proses dengan perintah sleep, dengan menampilkan tulisan "Terminated" sebagai indikatornya.
+    <br>
     - Gunakan perintah `ps`, `w` dan `top` untuk menunjukkan semua proses yang sedang dieksekusi.
 
       ![App Screenshot](img/lat18.jpg)
 
       ![App Screenshot](img/lat19.jpg)
+
+      Analisa : 
+      Dari hasil pengecekan, perintah `$ps` menampilkan status proses yang sedang aktif. Perintah `$w` menunjukkan daftar pengguna yang aktif. Sementara itu, perintah `$top` digunakan untuk menampilkan informasi mengenai semua proses yang sedang dieksekusi.
+      <br>
 
     - Gunakan perintah `ps –aeH` untuk menampilkan hierarki proses. Carilah init proses. Apakah Anda bisa identifikasi sistem daemon yang penting ? Dapatkan Anda identifikasi shell dan subproses ?
 
@@ -311,19 +338,48 @@ Perintah ini akan menunjukkan informasi proses dalam bentuk format register dala
 
       ![App Screenshot](img/lat22.jpg)
 
+      Analisa : 
+      Proses inisialisasi (init process) adalah proses induk dari semua proses pada sistem Linux, biasanya ditandai dengan PID = 1, yang pada umumnya diwakili oleh systemd.Sistem daemon yang krusial sering kali disebut juga sebagai proses inisialisasi dengan PID = 1.Selain itu, service daemon sering ditandai dengan akhiran huruf 'd'.Shell dapat ditemukan di tty2, di mana login dilakukan dengan subproses seperti bash, csh, atau sh.
+    <br>
     - Kombinasikan `ps –fae` dan grep, apa yang Anda lihat ?
 
       ![App Screenshot](img/lat23.jpg)
 
+      Analisa : 
+      Perintah `$ps -fae` digunakan untuk menampilkan semua proses yang sedang berjalan pada mesin. Anda dapat mengkombinasikan perintah tersebut dengan filter `grep`. Dalam contoh Anda, menjalankan perintah `$ps -fae | grep tty2` bertujuan untuk menampilkan proses yang sedang berjalan di terminal saat ini.
+      <br>
     - Jalankan proses `sleep 300` pada background. Log off komputer dan log in kembali. Lihat daftar semua proses yang berjalan. Apa yang terjadi pada proses sleep ?
 
       ![App Screenshot](img/lat24.jpg)
 
       ![App Screenshot](img/lat25.jpg)
 
+      Analisa : 
+     proses sleep tidak lagi dalam keadaan Running.hal ini bisa terjadi karena kita keluar dari terminal dan otomatis
+      membuat semua proses yang terjadi pada terminal ikut berhenti.
+
+
     
 ### Kesimpulan
 Praktikum ini dijalankan melalui command line, tempat seluruh prosesnya akan berlangsung. Dalam praktikum ini, dibahas pula metode untuk mengelola proses baik di latar depan (foreground) maupun latar belakang (background). Ada beragam pilihan perintah yang bisa digunakan bersama dengan fungsi ps untuk memantau proses. Lebih lanjut, kita juga bisa mengeksplorasi struktur hierarki proses menggunakan pstree untuk menampilkan proses dalam bentuk pohon. Berbagai perintah seperti ps, yes, jobs, dan kill digunakan selama praktikum ini untuk memahami dan mengelola proses yang ada.
+
+#### Perbedaan Interupt dan Systemcall
+
+1. System Call
+Panggilan sistem adalah metode yang memungkinkan proses pengguna berinteraksi dengan kernel sistem operasi. Panggilan sistem adalah panggilan dari mode pengguna ke mode kernel. Dengan kata lain, ini adalah cara program yang berjalan di komputer meminta layanan dari kernel.
+Kita dapat menggunakan panggilan sistem untuk membaca informasi dari file, mendapatkan waktu, mengelola memori komputer, atau mengontrol aliran data antar komputer. Selanjutnya, program pengguna memulai panggilan sistem dengan menjalankan instruksi yang mentransfer kendali dari program pengguna ke kernel sistem operasi. Panggilan sistem adalah permintaan program ke kernel untuk mengeksekusi suatu operasi:
+
+  ![App Screenshot](img/t1.jpg)
+
+2. Interupt
+Interupsi sistem adalah cara suatu proses memperingatkan kernel bahwa suatu peristiwa telah terjadi. Setelah diinterupsi, kernel dapat memproses kejadian tersebut dan kembali ke proses yang ditinggalkannya. Interupsi sistem juga digunakan untuk menghentikan sementara eksekusi suatu program.
+Interupsi sistem terjadi ketika sistem operasi mungkin ingin menghentikan program melakukan tugas di kernel. Interupsi adalah cara umum sinyal perangkat keras dan perangkat lunak memperingatkan komputer akan peristiwa seperti penyelesaian instruksi dan kedatangan data dari jaringan:
+
+  ![App Screenshot](img/t2.jpg)
+
+
+
+
 
 
         
