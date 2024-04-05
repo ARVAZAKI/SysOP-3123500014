@@ -274,7 +274,9 @@ Program diatas adalah program implementasi dari fork() didalam bahasa C++ dimana
 
 Visualisasi : 
 
-![App Screenshot](img/fork04v.png)
+
+![App Screenshot](img/fork04v.svg)
+
 
 
 5. fork05
