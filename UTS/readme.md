@@ -72,7 +72,7 @@ int main() {
 } 
 
 ```
-Output : 
+
 
 ![App Screenshot](img/fork3.jpeg)
 
@@ -118,6 +118,8 @@ deskripsi :
 
 Visualisasi :
 
+![App Screenshot](img/fork01v.png)
+
 
 2. fork02
 
@@ -159,6 +161,7 @@ Kedua proses (parent dan child) akan mencetak informasi PID mereka sendiri dan n
 Program akan terus berjalan dalam loop tak terbatas, dan nilai variabel x akan terus diperbarui dengan penambahan satu setiap dua detik.
 
 Visualisasi :
+![App Screenshot](img/fork02v.png)
 
 
 
@@ -207,6 +210,9 @@ this is process 11542
 
 this is process 11542 // Proses child terus mengeksekusi perulangan
 this is process 11541 // Proses parent terus mengeksekusi perulangan
+
+![App Screenshot](img/fork03v.png)
+
 
 4. fork04
 
@@ -261,6 +267,9 @@ int main(void) {
 ```
 
 ![App Screenshot](img/fork04.jpeg)
+
+Deskripsi : 
+Program diatas adalah program implementasi dari fork() didalam bahasa C++ dimana ada 2 proses yang memiliki hubungan parent dan child. proses pertama memiliki PID: 11570 dan PPID yang tidak diketahui yang merupakan proses utama (main program atau parent). Setelah program menjalankan fungsi fork() maka akan tercipta proses baru yaitu child dengan PID: 11571 dan PPID: 11570 (PID dari proses utama (parent)). Setelah parent program memberikan output yang menyebutkan nomor PID nya dan nomor PID dari child, parent program akan melakukan tahap menunggu (wait) untuk menunggu child program berjalan. Child program berjalan dan memberikan output nomor PID nya dan nomor PPID nya, lalu akan langsung exit the process. Setelah child program exit the process maka parent program akan mengikuti untuk exit the process juga. Dan ini adalah end of program.
 
 Visualisasi : 
 
@@ -325,6 +334,9 @@ int main(void) {
 
 ![App Screenshot](img/fork05.jpeg)
 
+Deskripsi : 
+Program diatas adalah program implementasi dari fork() didalam bahasa C++ dimana ada 2 proses yang memiliki hubungan parent dan child. proses pertama memiliki PID: 11604 dan PPID yang tidak diketahui yang merupakan proses utama (main program atau parent). Setelah program menjalankan fungsi fork() maka akan tercipta proses baru yaitu child dengan PID: 11605 dan PPID: 11604 (PID dari proses utama (parent)). Setelah parent program memberikan output yang menyebutkan nomor PID nya dan nomor PID dari child, parent program akan melakukan tahap menunggu (wait) untuk menunggu child program berjalan. Child program akan berjalan dan memberikan output nomor PID nya dan nomor PPID nya dan menjalankan program execl("/bin/ls", "ls", "-l", "/home", NULL), total 20 disini adalah jika proses child berhasil menjalankan sistem panggilan execl(), maka hasil dari perintah ls -l /home akan dicetak, serta setiap proses mencetak pesan sebelum mengakhiri eksekusi. Jadi, total output yang dihasilkan adalah 20. Setelah output dari program child diberikan, program child akan langsung exit the process. Setelah child program exit the process maka parent program akan mengikuti untuk exit the process juga. Dan ini adalah end of program.
+
 Visualisasi : 
 ![App Screenshot](img/fork05v.png)
 
@@ -388,6 +400,9 @@ int main(void) {
 ```
 
 ![App Screenshot](img/fork06.jpeg)
+
+Deskripsi : 
+Program diatas adalah program implementasi dari fork() didalam bahasa C++ dimana ada 2 proses yang memiliki hubungan parent dan child. proses pertama memiliki PID: 3076 dan PPID yang tidak diketahui yang merupakan proses utama (main program atau parent). Setelah program menjalankan fungsi fork() maka akan tercipta proses baru yaitu child dengan PID: 3077 dan PPID: 3076 (PID dari proses utama (parent)). Setelah parent program memberikan output yang menyebutkan nomor PID nya dan nomor PID dari child, parent program akan melakukan tahap menunggu (wait) untuk menunggu child program berjalan. Child program akan berjalan dan memberikan output nomor PID nya dan nomor PPID nya dan menjalankan program execl(fork3), panggilan sistem execl() digunakan untuk menjalankan sebuah program di dalam proses yang sudah ada, pada program yang ini sistem execl() menjalankan program fork3 pada file fork3.cpp. Setelah output dari program child diberikan, program child akan langsung exit the process. Setelah child program exit the process maka parent program akan mengikuti untuk exit the process juga. Dan ini adalah end of program.
 
 Visualisasi : 
 
