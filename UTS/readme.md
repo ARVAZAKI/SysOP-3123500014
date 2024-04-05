@@ -7,6 +7,8 @@
   <img src="https://upload.wikimedia.org/wikipedia/id/4/44/Logo_PENS.png" alt="Logo PENS">
   <h3 style="text-align: center;">Disusun Oleh : </h3>
   <p style="text-align: center;">
+    <strong>Fauzan Abderrasheed (3123500020) </strong><br>
+    <strong>Muhammad Rafi Dhiyaulhaq (3123500004) </strong><br>
     <strong>Arva Zaki Fanadzan (3123500014)</strong>
   </p>
 <h3 style="text-align: center;line-height: 1.5">Politeknik Elektronika Negeri Surabaya<br>Departemen Teknik Informatika Dan Komputer<br>Program Studi Teknik Informatika<br>2023/2024</h3>
@@ -31,7 +33,7 @@ Proses child dan proses parent berjalan di ruang memori terpisah. Pada saat fork
 <br>
 Selain itu, proses CHILD juga dapat melakukan forking proses seperti halnya PARENT, sehingga terbentuk struktur pohon proses yang kompleks.
 Penting untuk diingat bahwa setelah fork, kedua proses (parent dan child) berjalan secara independen. Seiring berjalannya waktu, kedua proses dapat berinteraksi satu sama lain melalui mekanisme komunikasi seperti pipe, shared memory, atau socket.
-proses child merupakan duplikat persis dari proses induk kecuali untuk beberapa poin berikut:
+proses child merupakan duplikat persis dari proses parent kecuali untuk beberapa poin berikut:
 - child punya process ID uniknya sendiri, dan PID ini tidak cocok dengan ID grup proses mana pun yang ada (setpgid(2)) atau sesi.
 - Child’s parent process ID sama dengan parent’s process ID
 - Child tidak mewarisi parent memory key (mlock(2), mlockall(2))
@@ -112,7 +114,7 @@ return 0;
 ![App Screenshot](img/fork01.jpeg)
 
 deskripsi : 
- Program ini mencetak ID proses (PID), ID proses induk (PPID), dan ID pengguna (UID) dari proses tersebut. Setelah mencetak informasi tersebut, program akan berhenti selama tiga detik sebelum mencetak informasi lagi. Program ini berulang tiga kali.
+ Program ini mencetak ID proses (PID), ID proses parent (PPID), dan ID pengguna (UID) dari proses tersebut. Setelah mencetak informasi tersebut, program akan berhenti selama tiga detik sebelum mencetak informasi lagi. Program ini berulang tiga kali.
 
 Visualisasi :
 
@@ -146,6 +148,10 @@ int main(void) {
 }
 
 ```
+
+![App Screenshot](img/fork02.jpeg)
+
+
 Deskripsi :
 Program mencetak ID proses (PID) dan nilai variabel x dalam loop tak terbatas.
 Program menggunakan systemCall fork() untuk membuat salinan proses saat ini,dan menciptakan child proses.
@@ -155,7 +161,6 @@ Program akan terus berjalan dalam loop tak terbatas, dan nilai variabel x akan t
 Visualisasi :
 
 
-![App Screenshot](img/fork02.jpeg)
 
 3. fork03
 
@@ -185,6 +190,23 @@ int main(void) {
 
 ![App Screenshot](img/fork03.jpeg)
 
+Deskripsi :
+
+Panggilan sistem fork() digunakan untuk membuat proses baru yang merupakan replika dari proses pemanggilan. Nilai kembalian dari fork() berbeda untuk proses parent dan proses child:
+
+Dalam proses parent, fork() mengembalikan ID proses child.
+Dalam proses child, fork() mengembalikan 0.
+Ada loop yang diulang 5 kali. Di dalam loop, program memanggil getpid() untuk mendapatkan ID proses dan mencetak "this is process" diikuti dengan ID proses menggunakan cout. Panggilan sistem sleep(2) menjeda proses selama 2 detik.
+
+Ketika program dijalankan, ia menciptakan proses child menggunakan fork(). Proses parent dan child terus mengeksekusi kode setelah fork(). Karena kedua proses memiliki kode yang sama, keduanya mencetak pesan "this is process" diikuti dengan ID prosesnya.
+
+ID proses parent adalah 11541 dan ID proses child adalah 11542. Outputnya adalah:
+
+this is process 11541
+this is process 11542
+
+this is process 11542 // Proses child terus mengeksekusi perulangan
+this is process 11541 // Proses parent terus mengeksekusi perulangan
 
 4. fork04
 
@@ -239,6 +261,10 @@ int main(void) {
 ```
 
 ![App Screenshot](img/fork04.jpeg)
+
+Visualisasi : 
+
+![App Screenshot](img/fork04v.png)
 
 
 5. fork05
@@ -299,6 +325,73 @@ int main(void) {
 
 ![App Screenshot](img/fork05.jpeg)
 
+Visualisasi : 
+![App Screenshot](img/fork05v.png)
+
+6. Fork06
+
+```
+#include <iostream>
+using namespace std;
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/wait.h>
+/* pid_t fork() dideklarasikan pada unistd.h.
+pid_t adalah type khusus untuk process id yg ekuivalen dg int
+*/
+
+int main(void) {
+	pid_t child_pid;
+	int status;
+	pid_t wait_result;
+	child_pid = fork();
+
+
+	if (child_pid == 0) {
+		/* kode ini hanya dieksekusi proses child */
+		cout << "I am a child and my pid = " << getpid() << endl;
+		execl("fork03", "goose", NULL);
+		/* jika execl berhasil kode ini tidak pernah digunakan */
+		cout << "Could not execl file fork3" << endl;
+		exit(1);
+		/* exit menghentikan hanya proses child */
+	}
+	else if (child_pid > 0) {
+		/* kode ini hanya mengeksekusi proses parent */
+		cout << "I am the parent and my pid = " << getpid()<< endl;
+		cout << "My child has pid = " << child_pid << endl;
+	}
+	else {
+		cout << "The fork system call failed to create a new process" << endl;
+		exit(1);
+	}
+	/* kode ini hanya dieksekusi oleh proses parent karena
+	child mengeksekusi dari “fork3” atau keluar */
+		cout << "I am a happy, healthy process and my pid = " << getpid() << endl;
+		if (child_pid == 0) {
+	/* kode ini tidak pernah dieksekusi */
+		printf("This code will never be executed!\n");
+	}
+	else {
+	/* kode ini hanya dieksekusi oleh proses parent */
+		cout << "I am a parent and I am going to wait for my child" << endl;
+		do {
+		/* parent menunggu sinyal SIGCHLD mengirim tanda
+		bila proses child diterminasi */
+			wait_result = wait(&status);
+		} while (wait_result != child_pid);
+		cout << "I am a parent and I am quitting." << endl;
+	}
+	return 0;
+}
+
+```
+
+![App Screenshot](img/fork06.jpeg)
+
+Visualisasi : 
+
+![App Screenshot](img/fork06v.png)
 
 
 
