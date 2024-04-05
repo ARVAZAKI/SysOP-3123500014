@@ -118,8 +118,30 @@ deskripsi :
 
 Visualisasi :
 
-![App Screenshot](img/fork01v.png)
 
+```
+int main() { 
+    for(int i = 0; i < 3; i++) {
+
+                    pid: 11093, ppid: 11079, uid: 1000
+                            [Main Process]
+                                    |
+                                 sleep(3)
+                                    |
+                    pid: 11093, ppid: 11079, uid: 1000
+                            [Main Process]
+                                    |
+                                 sleep(3)
+                                    |
+                    pid: 11093, ppid: 11079, uid: 1000
+                            [Main Process]
+                                    |
+                                 sleep(3)
+
+    }
+  return 0;
+}
+```
 
 2. fork02
 
@@ -162,8 +184,24 @@ Program akan terus berjalan dalam loop tak terbatas, dan nilai variabel x akan t
 
 Visualisasi :
 
-![App Screenshot](img/fork02v.png)
-
+```
+int main() { 
+  fork();              > Child process created <
+                                 +
+                               /   \
+    while(1) {                /     \
+               pid: 11512, ppid: -    pid: 11513, ppid: 11512
+            [Parent Process] x = 5    [Child Process] x = 5
+                              \     /
+                               \   /
+                                 |
+                              sleep(2)
+                                 |
+                                x++
+    }
+  return 0;
+}
+```
 
 
 3. fork03
@@ -212,8 +250,26 @@ this is process 11542
 this is process 11542 // Proses child terus mengeksekusi perulangan
 this is process 11541 // Proses parent terus mengeksekusi perulangan
 
-![App Screenshot](img/fork03v.png)
+Visualisasi :
 
+```
+int main() { 
+  fork();              > Child process created <
+                                 +
+                               /   \
+    loop 0 to 5 {             /     \
+               pid: 11541, ppid: -    pid: 11542, ppid: 11541
+               [Parent Process]     [Child Process]
+                              \     /
+                               \   /
+                                 |
+                              sleep(2)
+                                 |
+                                x++
+    }
+  return 0;
+}
+```
 
 4. fork04
 
@@ -274,11 +330,28 @@ Program diatas adalah program implementasi dari fork() didalam bahasa C++ dimana
 
 Visualisasi : 
 
-
-![App Screenshot](img/fork04v.svg)
-
-
-
+```
+int main() { 
+  fork();              > Child process created <
+                                 +
+                               /   \
+                              /     \
+               pid: 11570, ppid: -    \
+                [Parent Process]      \  
+                        |              \
+                        |               \
+                       wait          pid: 11571, ppid: 11570
+                           \             [Child Process]
+                            \         /
+                             \       /
+                              \     /
+                               \   /
+                                 |
+                                exit
+    
+  return 0;
+}
+```
 5. fork05
 
 ```
@@ -342,8 +415,31 @@ Program diatas adalah program implementasi dari fork() didalam bahasa C++ dimana
 
 Visualisasi : 
 
-![App Screenshot](img/fork05v.png)
 
+```
+int main() { 
+  fork();              > Child process created <
+                                 +
+                               /   \
+                              /     \
+               pid: 11604, ppid: -    \
+                [Parent Process]      \  
+                        |              \
+                        |               \
+                        |          pid: 11605, ppid: 11604
+                       wait           total 20
+                          \           execl(/bin/ls) 
+                           \         [Child Process]
+                            \         /
+                             \       /
+                              \     /
+                               \   /
+                                 |
+                                exit
+    
+  return 0;
+}
+```
 
 6. Fork06
 
@@ -411,7 +507,30 @@ Program diatas adalah program implementasi dari fork() didalam bahasa C++ dimana
 
 Visualisasi : 
 
-![App Screenshot](img/fork06v.png)
 
+```
+int main() { 
+  fork();              > Child process created <
+                                 +
+                               /   \
+                              /     \
+               pid: 6598, ppid: -    \
+                [Parent Process]      \  
+                        |              \
+                        |               \
+                        |          pid: 6599, ppid: 6598
+                       wait           execl(fork3) 
+                          \           [Child Process]
+                           \           /
+                            \         /
+                             \       /
+                              \     /
+                               \   /
+                                 |
+                                exit
+    
+  return 0;
+}
+```
 
 
