@@ -689,11 +689,276 @@ contoh pemrograman untuk menggabungkan variabel string menggunakan penambahan se
 
 Operator perbandingan digunakan untuk memeriksa nilai satu dengan yang lain dengan membandingkan nilai. Operator-operator tersebut adalah (<, <=, >, >=, ==, !=).
 
+##### Bash Athematic expressions
+
 ![App Screenshot](img/append1.jpg)
 
 Output : 
 
 ![App Screenshot](img/append2.jpg)
+
+##### Bash Athematic Expansion
+
+seperti ekspresi. Ini menghitung nilai dari suatu ekspresi dan menggantikan hasilnya dengan nilai tersebut, selalu dengan awalan tanda dolar. Misalnya, untuk menghitung rata-rata dari dua angka dan mencetak hasilnya, kita menggunakan sintaks ekspansi yang mengevaluasi ekspresi dan menggantikan hasilnya dengan keluaran dari ekspresi tersebut.
+
+![App Screenshot](img/append3.jpg)
+
+Output : 
+
+![App Screenshot](img/append4.jpg)
+
+## Function
+
+Tutorial Bash mengenai fungsi-fungsi dalam pemrograman dengan contoh-contoh penggabungan variabel string menggunakan operasi penambahan sederhana dan operator aritmatika singkat.
+
+Fungsi-fungsi adalah potongan kode yang dapat digunakan kembali yang dikelompokkan di bawah satu nama.
+
+Cara mendeklarasikan fungsi, memanggilnya, serta memahami cakupan variabel di dalamnya:
+
+- Deklarasi fungsi
+- Memanggil fungsi
+- Fungsi dengan argumen
+- Ruang lingkup variabel dalam fungsi
+
+Definisi fungsi berisi beberapa baris kode yang akan dieksekusi. Fungsi memiliki nama yang diapit oleh kurung kurawal {}. Mereka dapat dideklarasikan dengan dua cara.
+
+```
+
+function function_name {
+# Commands or valid bash code
+# multiple lines
+}
+```
+
+## Bash - Operators
+
+Operator adalah simbol dalam pemrograman yang melakukan operasi pada operand.
+
+```
+operand1 operator operand2
+```
+
+Macam macam operator : 
+
+<table border="1">
+  <tr>
+    <th>Operator</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>+</td>
+    <td>Addition</td>
+    <td>penjumlahan dua atau lebih operand</td>
+    <td>p + q = 50</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>Subtraction</td>
+    <td>pengurangan dua atau lebih operand</td>
+    <td>q - p = 10</td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>Multiplication</td>
+    <td>perkalian dua atau lebih operand</td>
+    <td>p * q = 600</td>
+  </tr>
+  <tr>
+    <td>/</td>
+    <td>Divide</td>
+    <td>menghasilkan hasil bagi setelah pembagian nilai</td>
+    <td>q / p = 1.5</td>
+  </tr>
+  <tr>
+    <td>%</td>
+    <td>Modulus</td>
+    <td>Mengembalikan sisa setelah pembagian nilai</td>
+    <td>q % p = 10</td>
+  </tr>
+  <tr>
+    <td>-expr</td>
+    <td>Unary Minus</td>
+    <td>balik dari suatu ekspresi</td>
+    <td>-(10-7) adalah -3</td>
+  </tr>
+  <tr>
+    <td>~/</td>
+    <td>Division Int</td>
+    <td>mengembalikan nilai int dari pembagian</td>
+    <td>(10~/7) adalah 1</td>
+  </tr>
+  <tr>
+    <td>++</td>
+    <td>Increment</td>
+    <td>Menambahkan nilai sebesar 1</td>
+    <td>++p = 21</td>
+  </tr>
+  <tr>
+    <td>--</td>
+    <td>Decrement</td>
+    <td>Mengurangkan nilai sebesar 1</td>
+    <td>--q = 29</td>
+  </tr>
+</table>
+
+##### Assignment Operators
+
+Operator penugasan digunakan untuk menetapkan nilai ke variabel. Berikut adalah beberapa contoh operator penugasan yang umum digunakan dalam pemrograman:
+
+=: Menetapkan nilai dari nilai kanan ke nilai kiri.
++=: Menambahkan nilai nilai kanan ke nilai kiri.
+-=: Mengurangkan nilai nilai kanan dari nilai kiri.
+*=: Mengalikan nilai nilai kiri dengan nilai kanan.
+/=: Membagi nilai nilai kiri dengan nilai kanan.
+%=: Menetapkan sisa hasil bagi nilai kiri dengan nilai kanan.
+
+##### Bitwise Operators
+
+Operator bitwise digunakan untuk melakukan operasi pada level bit pada operand. Berikut adalah beberapa operator bitwise yang umum digunakan:
+
+<table border="1">
+  <tr>
+    <th>Operasi</th>
+    <th>Simbol</th>
+    <th>Deskripsi</th>
+    <th>Hasil</th>
+  </tr>
+  <tr>
+    <td>AND</td>
+    <td>&amp;</td>
+    <td>Operasi AND bitwise dari dua operand</td>
+    <td>$op1 &amp; $op2 adalah 0</td>
+  </tr>
+  <tr>
+    <td>AND Equal</td>
+    <td>&amp;=</td>
+    <td>Operasi AND Equal bitwise dari dua operand</td>
+    <td>$op1 &amp;= $op2 adalah 0</td>
+  </tr>
+  <tr>
+    <td>OR</td>
+    <td>|</td>
+    <td>Operasi OR bitwise dari dua operand</td>
+    <td>$op1 | $op2 adalah 7</td>
+  </tr>
+  <tr>
+    <td>XOR</td>
+    <td>^</td>
+    <td>Operasi XOR bitwise dari dua operand</td>
+    <td>$op1 ^ $op2 adalah 7</td>
+  </tr>
+  <tr>
+    <td>Left Shift</td>
+    <td>&lt;&lt;</td>
+    <td>Operasi Left Shift bitwise dari dua operand</td>
+    <td>$op1 &lt;&lt; $op2 adalah 0</td>
+  </tr>
+  <tr>
+    <td>Left Shift Eql</td>
+    <td>&lt;&lt;=</td>
+    <td>Operasi Left Shift Equal bitwise dari dua operand</td>
+    <td>$op1 &lt;&lt;= $op2 adalah 7</td>
+  </tr>
+  <tr>
+    <td>XOR</td>
+    <td>^</td>
+    <td>Operasi XOR bitwise dari dua operand</td>
+    <td>$op1 ^ $op2 adalah 7</td>
+  </tr>
+  <tr>
+    <td>XOR Equal</td>
+    <td>^=</td>
+    <td>Operasi XOR Equal bitwise dari dua operand</td>
+    <td>$op1 ^= $op2 adalah 7</td>
+  </tr>
+</table>
+
+##### Logical operators
+
+Operator-operator ini digunakan untuk melakukan operasi logika pada variabel, ekspresi, atau data.
+
+##### Numerical Comparision Operator
+
+``` -eq ``` digunakan untuk logika equal/mencari persamaan nilai
+
+![App Screenshot](img/operator1.jpg)
+
+Output : 
+
+![App Screenshot](img/operator2.jpg)
+
+```-ne``` digunakan untuk logika equal, mencari ketidaksamaan nilai
+
+![App Screenshot](img/operator3.jpg)
+
+Output : 
+
+![App Screenshot](img/operator4.jpg)
+
+## Bash - Numbers Comparison
+
+Berikut adalah operator perbandingan:
+
+- `-eq`: Sama dengan
+  - Memeriksa apakah dua variabel sama
+- `-ne`: Tidak sama dengan
+  - Memeriksa apakah dua variabel tidak sama
+- `-lt`: Kurang dari
+  - Memeriksa apakah variabel pertama kurang dari variabel kedua
+- `-le`: Kurang dari atau sama dengan
+  - Memeriksa apakah variabel pertama kurang dari atau sama dengan variabel kedua
+- `-gt`: Lebih dari
+  - Memeriksa apakah variabel pertama lebih besar dari variabel kedua
+- `-ge`: Lebih besar dari atau sama dengan
+  - Memeriksa apakah variabel pertama lebih besar dari atau sama dengan variabel kedua
+
+![App Screenshot](img/comp1.jpg)
+
+Output : 
+
+![App Screenshot](img/comp2.jpg)
+
+## Bash - Check Directory
+
+
+Untuk memeriksa apakah sebuah direktori ada atau tidak dalam skrip Bash, Anda dapat menggunakan perintah test dengan opsi -d. Berikut adalah contoh cara melakukannya dalam skrip Bash:
+
+```
+#!/bin/bash
+
+directory="/path/to/directory"
+
+if [ -d "$directory" ]; then
+    echo "Directory $directory exists."
+else
+    echo "Directory $directory does not exist."
+fi
+```
+
+##### How to mkdir only if a directory does not already exist?
+
+![App Screenshot](img/check1.jpg)
+
+Output : 
+
+![App Screenshot](img/check2.jpg)
+
+Sebagai alternatif, ekspresi kondisional ternary digunakan sebagai pengganti ekspresi kondisional if.
+
+![App Screenshot](img/check3.jpg)
+
+Output : 
+
+![App Screenshot](img/check4.jpg)
+
+
+
+
+
+
+
 
 
 
