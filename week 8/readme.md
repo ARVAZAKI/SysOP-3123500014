@@ -1052,4 +1052,214 @@ Output :
 
 Di sini, ${} digunakan untuk substitusi ekspresi, mengganti nilai ekspresi ke dalam string. Perintah expr mengeksekusi ekspresi, dan length adalah argumen yang diberikan untuk menemukan panjang string.
 
+## Bash - bashrc
+
+File .bashrc adalah skrip bash yang dieksekusi saat:
+
+1. Eksekusi skrip bash.
+2. Shell bash dibuka secara interaktif.
+
+File ini tersembunyi secara default karena dimulai dengan titik (.). Terletak di direktori home pengguna.
+
+Anda dapat menggunakan editor Vi atau Nano untuk melihat file .bashrc.
+
+Berikut adalah perintahnya:
+
+```
+nano ~/.bashrc
+```
+
+Anda juga dapat menggunakan:
+
+```
+vi ~/.bashrc
+```
+
+Kedua perintah tersebut akan membuka file .bashrc dalam editor Nano atau Vi.
+
+Untuk memuat ulang pengaturan .bashrc tanpa masuk dan keluar lagi, Anda dapat menjalankan perintah berikut di prompt perintah:
+
+```bash
+source ~/.bashrc
+```
+
+Perintah ini akan memuat ulang pengaturan .bashrc saat ini tanpa perlu masuk dan keluar dari sesi bash.
+
+## Bash - Ternary Operator
+
+Cara lainnya adalah dengan menggunakan perintah `let` untuk menetapkan variabel berdasarkan hasil ekspresi kondisional.
+
+![App Screenshot](img/ternary1.jpg)
+
+Output : 
+
+![App Screenshot](img/ternary2.jpg)
+
+## Bash - Lowercase
+
+Misalnya, jika string inputnya adalah "Hello World Welcome", maka outputnya akan menjadi "hello world welcome".
+
+Ada beberapa cara untuk mencapai ini, tergantung pada jenis dan versi Bash.
+
+Menggunakan perintah tr
+Perintah tr, singkatan dari translator, adalah perintah Unix yang digunakan untuk mengonversi karakter dari satu format ke format lainnya.
+
+![App Screenshot](img/lower1.jpg)
+
+Output : 
+
+![App Screenshot](img/lower2.jpg)
+
+Alternatifnya : 
+
+![App Screenshot](img/lower3.jpg)
+
+Output : 
+
+![App Screenshot](img/lower4.jpg)
+
+## Bash - Uppercase
+
+
+Sebuah string huruf besar merujuk pada sebuah string yang mengandung semua huruf dalam huruf besar.
+
+Misalnya, jika string inputnya adalah "Hello World Welcome", maka outputnya akan menjadi "HELLO WORLD WELCOME."
+
+![App Screenshot](img/upper1.jpg)
+
+Output : 
+
+![App Screenshot](img/upper2.jpg)
+
+Untuk mengkonversi sebuah string menjadi huruf besar menggunakan perintah awk, fungsi toupper digabungkan dengan awk. Hasilnya kemudian diteruskan ke perintah echo menggunakan operator pipa:
+
+![App Screenshot](img/upper3.jpg)
+
+Output : 
+
+![App Screenshot](img/upper4.jpg)
+
+## Bash - Substring
+
+Skrip Bash ini dirancang untuk menentukan apakah sebuah string mengandung sebuah substring tertentu.
+
+Ada beberapa cara untuk melakukan pemeriksaan ini.
+
+##### Using the Comparison Operator to Check for Substring exists or not
+
+Gunakan pernyataan if untuk membandingkan string dengan substring yang diinginkan menggunakan operator kesetaraan (==) dan wildcard (*).
+Terakhir, cetak string jika substring ditemukan.
+
+![App Screenshot](img/subs1.jpg)
+
+Output : 
+
+![App Screenshot](img/subs2.jpg)
+
+##### Use Regular Expressions to Find a Substring
+
+Operator =~ memudahkan pencarian substring dalam sebuah string yang diberikan, digunakan dalam sebuah blok if.
+
+```
+mainstring='Welcome to w3schools'
+if [[ $mainstring =~ "w3schools" ]]; then
+  echo "w3schools exists in the main string"
+fi
+```
+
+##### Use the grep command
+
+Perintah grep digunakan untuk mencari string yang ditentukan, dipipakan ke string utama untuk dibandingkan.
+
+![App Screenshot](img/subs3.jpg)
+
+Output : 
+![App Screenshot](img/subs4.jpg)
+
+##### Bash - variable set
+
+Dalam pemrograman skrip shell bash, Anda dapat melakukan pengecekan variabel untuk:
+
+1. Memeriksa apakah variabel sudah diatur atau belum.
+2. Memeriksa apakah variabel kosong atau tidak kosong.
+3. Memeriksa apakah variabel adalah string kosong atau tidak.
+
+Berikut adalah contoh sintaks untuk setiap kasus:
+
+1. Memeriksa apakah variabel sudah diatur atau belum:
+```bash
+if [ -v variable ]; then
+    echo "Variable is set."
+else
+    echo "Variable is not set."
+fi
+```
+
+2. Memeriksa apakah variabel kosong atau tidak kosong:
+```bash
+if [ -z "$variable" ]; then
+    echo "Variable is empty."
+else
+    echo "Variable is not empty."
+fi
+```
+
+3. Memeriksa apakah variabel adalah string kosong atau tidak:
+```bash
+if [ -z "${variable+x}" ]; then
+    echo "Variable is an empty string."
+else
+    echo "Variable is not an empty string."
+fi
+```
+
+Dalam contoh di atas, ganti `variable` dengan nama variabel yang ingin Anda periksa.
+
+contoh : 
+
+
+![App Screenshot](img/setvar1.jpg)
+
+Output : 
+![App Screenshot](img/setvar2.jpg)
+
+
+![App Screenshot](img/setvar3.jpg)
+
+Output : 
+![App Screenshot](img/setvar4.jpg)
+
+![App Screenshot](img/setvar5.jpg)
+
+Output : 
+![App Screenshot](img/setvar6.jpg)
+
+## Bash - Iterate Nos
+
+Kadang-kadang, kita ingin membuat nama file dengan nama yang berisi angka yang dihasilkan dari urutan atau rentang angka.
+
+##### Generate a range of numbers in the bash script
+
+Perintah seq digunakan untuk menghasilkan urutan angka.
+
+![App Screenshot](img/nos1.jpg)
+
+Output : 
+![App Screenshot](img/nos2.jpg)
+
+menggunakan perulangan for
+
+![App Screenshot](img/nos3.jpg)
+
+Output : 
+![App Screenshot](img/nos4.jpg)
+
+menggunakan perulangan while
+
+
+![App Screenshot](img/nos5.jpg)
+
+Output : 
+![App Screenshot](img/nos6.jpg)
+
 
