@@ -953,27 +953,103 @@ Output :
 
 ![App Screenshot](img/check4.jpg)
 
+## Bash - File Name
+
+Untuk mendapatkan nama file beserta ekstensinya, perintah basename dapat digunakan untuk menghapus direktori dan mengembalikan hanya nama file untuk jalur yang diberikan, baik itu variabel atau string.
+
+Contoh, jika jalurnya adalah /home/john/run.sh, nama file yang dikembalikan adalah run.sh. Proses ini melibatkan pengambilan jalur lengkap dan mengekstrak hanya nama file dengan menghapus jalur. Nama file yang dihasilkan kemudian disimpan dalam sebuah variabel dan dicetak ke konsol.
+
+basename digunakan untuk menghapus direktori dan mengembalikan nama file untuk jalur yang diberikan. Jalur tersebut bisa berupa variabel atau string. Sebagai contoh, jika jalurnya adalah /home/john/run.sh, nama file yang dikembalikan adalah run.sh. Dalam hal ini, jalur lengkap diberikan dan mengembalikan nama file dengan menghapus jalur.
+
+```
+file_path="/home/john/run.sh"
+filename=$(basename "$file_path")
+echo $filename
+```
+
+##### Extract extension for a file path
+
+Untuk mengisolasi ekstensi file dari jalur file yang diberikan, ${filename##*.} dapat digunakan. Ekspresi ini mengembalikan hanya ekstensi file.
+
+Sebagai contoh, pertimbangkan jalur /home/john/run.sh, hasil ekstensinya adalah sh.
+
+Awalnya, perintah basename digunakan untuk menghapus jalur direktori dan mengembalikan nama file untuk jalur yang ditentukan, dan nama file ini kemudian digunakan bersama dengan sintaks ekspresi untuk mengembalikan hanya ekstensinya.
+
+![App Screenshot](img/fname1.jpg)
+
+Output : 
+
+![App Screenshot](img/fname2.jpg)
+
+## Bash - Split String
 
 
+Kadang-kadang, saat bekerja dengan skrip bash, ada kebutuhan untuk memisahkan string berdasarkan delimiter dan mengekstrak beberapa string untuk pengolahan lebih lanjut atau penyimpanan dalam variabel.
+
+##### Split a string using the awk command in a bash shell script
+
+Perintah awk, sebuah utilitas Linux yang kompatibel dengan semua distribusi bash dan shell, digunakan untuk memisahkan sebuah string berdasarkan delimiter yang ditentukan.
+
+Inputnya diberikan menggunakan simbol pipa (|), dan contoh di bawah ini menunjukkan pembagian sebuah string yang berisi titik dua 
+
+![App Screenshot](img/split1.jpg)
+
+Output : 
+
+![App Screenshot](img/split2.jpg)
+
+##### split using IFS variable
+
+Di sini, string input terdiri dari elemen-elemen yang dipisahkan oleh tanda hubung. Variabel shell IFS (Internal Field Separator) diatur menjadi tanda hubung, dan string tersebut diiterasi menggunakan loop for.
+
+![App Screenshot](img/split3.jpg)
+
+Output : 
+
+![App Screenshot](img/split4.jpg)
+
+##### Use Parameter expansion and loop
+
+Ekspansi parameter digunakan untuk mengubah nilai variabel berdasarkan opsi yang ditentukan. Dalam kasus ini, sebuah variabel string dikonversi menjadi sebuah array. Array tersebut kemudian diiterasi menggunakan sintaks loop for, mencetak setiap elemen ke konsol.
+
+![App Screenshot](img/split5.jpg)
+
+Output : 
+
+![App Screenshot](img/split6.jpg)
+
+## Bash - String Length
+
+Panjang sebuah string ditentukan oleh jumlah karakter yang terkandung di dalamnya, dan umumnya mudah untuk mengetahui panjang ini untuk teks normal.
+
+Posting ini akan menjelajahi berbagai metode untuk menghitung jumlah karakter dalam sebuah string dengan encoding UTF.
+
+![App Screenshot](img/length1.jpg)
+
+Output : 
+
+![App Screenshot](img/length2.jpg)
+
+Metode kedua melibatkan penggunaan perintah wc -m, baik langsung dengan sebuah string atau melalui sebuah variabel.
 
 
+![App Screenshot](img/length3.jpg)
 
+Output : 
 
+![App Screenshot](img/length4.jpg)
 
+echo -n "string" digunakan untuk mencetak string tanpa baris baru (opsi -n). Operator pipa | mengarahkan output dari perintah di sebelah kiri ke perintah di sebelah kanan, dan wc -m menghitung jumlah karakter dalam sebuah string.
 
+Menggunakan Perintah expr
+Metode lain melibatkan penggunaan perintah expr untuk menemukan panjang sebuah string.
 
+![App Screenshot](img/length5.jpg)
 
+Output : 
 
+![App Screenshot](img/length6.jpg)
 
-
-
-
-
-
-
-
-
-
-
+Di sini, ${} digunakan untuk substitusi ekspresi, mengganti nilai ekspresi ke dalam string. Perintah expr mengeksekusi ekspresi, dan length adalah argumen yang diberikan untuk menemukan panjang string.
 
 
