@@ -72,6 +72,26 @@ UEFI menyediakan antarmuka pengaturan yang lebih lengkap dan mudah digunakan dar
 
 UEFI merupakan standar industri yang aktif berkembang dan mendapatkan dukungan penuh dari para produsen perangkat keras dan perangkat lunak. Legacy BIOS, meskipun masih digunakan secara luas, sudah tidak lagi mendapatkan pembaruan rutin dan dukungan dari banyak produsen
 
+### proses UEFI dan LEGACY
+
+![App Screenshot](img/uefi%20dan%20legacy.jpg)
+
+### Perbedaan Proses 
+
+terdapat beberapa perbedaan utama antara proses booting pada UEFI (Unified Extensible Firmware Interface) dan Legacy BIOS (Basic Input/Output System). Berikut adalah kesimpulan perbedaannya:
+
+1. *Inisialisasi Firmware*: Pada UEFI, inisialisasi firmware UEFI terjadi setelah POST, sementara pada Legacy BIOS, inisialisasi BIOS terjadi langsung setelah POST.
+
+2. *Boot Manager*: UEFI menggunakan UEFI Boot Manager yang dapat memuat beberapa file konfigurasi untuk memilih perangkat booting, sedangkan Legacy BIOS langsung mencari Master Boot Record (MBR) di perangkat booting.
+
+3. *Partisi dan Keamanan*: UEFI mendukung booting dari partisi GPT yang lebih besar dan memiliki fitur keamanan seperti Secure Boot, sementara Legacy BIOS memiliki keterbatasan dalam ukuran partisi booting dan tidak memiliki fitur keamanan seperti Secure Boot.
+
+4. *MBR vs. GPT*: Legacy BIOS menggunakan MBR (Master Boot Record) untuk menentukan partisi booting, sementara UEFI menggunakan GPT (GUID Partition Table), yang memiliki keuntungan dalam ukuran partisi dan jumlah partisi yang dapat didukung.
+
+5. *PXE Boot*: UEFI mendukung booting jaringan (PXE boot), yang memungkinkan booting melalui jaringan lokal, sedangkan Legacy BIOS tidak secara native mendukung fitur ini.
+
+Dengan demikian, kesimpulan dari perbedaan antara UEFI dan Legacy BIOS dalam proses booting adalah bahwa UEFI memberikan lebih banyak fleksibilitas, dukungan untuk partisi yang lebih besar, fitur keamanan yang lebih baik, dan kemampuan untuk booting jaringan, sementara Legacy BIOS memiliki keterbatasan dalam hal partisi dan keamanan.
+
 ## Referensi
 <ul>
 <li><a href = "https://seberkas.com/perbedaan-uefi-dan-legacy/">Apa itu UEFI?</a?></li>
