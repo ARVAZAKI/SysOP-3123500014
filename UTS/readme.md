@@ -596,7 +596,7 @@ int main() {
 
 Output : 
 
-![App Screenshot](img/matriks.jpeg)
+![App Screenshot](img/matriks.jpg)
 
 Analisis: Kode di atas adalah program perkalian dua matriks [4 x 4] dalam bahasa C yang menggunakan fork().
 
