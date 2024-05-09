@@ -602,6 +602,5 @@ Analisis: Kode di atas adalah program perkalian dua matriks [4 x 4] dalam bahasa
 
 Proses Fork: Setelah matriks diinisialisasi, program melakukan fork untuk menciptakan proses child. Proses child akan mengalikan setiap elemen matriks dengan skalar, sementara proses parent menunggu proses child selesai.
 
-Pemrosesan Serial: Meskipun perkalian skalar dilakukan secara paralel oleh proses child, program menunggu proses child selesai sebelum melanjutkan eksekusi. Ini dilakukan dengan menggunakan fungsi wait(), sehingga proses parent akan menunggu sampai proses child selesai sebelum mencetak pesan bahwa proses parent telah selesai.
 
 Kesimpulannya, program ini memberikan contoh yang baik tentang penggunaan fork dalam bahasa pemrograman C untuk melakukan operasi secara paralel. Dengan memahami konsep fork dan multitasking, programmer dapat membuat aplikasi yang lebih efisien dan responsif.
