@@ -144,3 +144,20 @@ Dalam sistem operasi, pengelolaan thread memerlukan perhatian khusus terhadap be
 - **Aktivasi Penjadwal**: Model komunikasi antara thread pengguna dan kernel untuk mengelola thread secara efisien dalam model Many-to-Many atau two-level.
 - **Lightweight Process (LWP)**: Struktur data menengah yang digunakan untuk mengurangi overhead penjadwalan dan memungkinkan kernel dan perpustakaan thread berkomunikasi.
 - **Mekanisme Aktivasi Penjadwal**: Ketika kernel memutuskan untuk menjadwalkan atau menghentikan thread pengguna, ia mengirim aktivasi penjadwal ke perpustakaan thread pengguna, yang kemudian dapat menyesuaikan peta thread pengguna ke thread kernel. Hal ini memungkinkan perpustakaan thread untuk menjaga sinkronisasi dan efisiensi dalam penggunaan thread kernel.
+
+#### QNA
+1. Berikan tiga contoh pemrograman di mana multithreading memberikan kinerja yang lebih baik daripada solusi single-threaded.
+Jawaban:
+a. Server web yang melayani setiap permintaan dalam thread terpisah.
+b. Aplikasi paralel seperti perkalian matriks di mana bagian-bagian matriks dapat dikerjakan secara paralel.
+c. Program GUI interaktif seperti debugger di mana satu thread digunakan untuk memonitor input pengguna, thread lain mewakili aplikasi yang berjalan, dan thread ketiga memonitor kinerja.
+
+2. Apa dua perbedaan antara thread tingkat pengguna dan thread tingkat kernel? Dalam keadaan apa satu jenis lebih baik dari yang lain?
+Jawaban:
+a. Thread tingkat pengguna tidak diketahui oleh kernel, sedangkan kernel mengetahui thread kernel.
+b. Pada sistem yang menggunakan pemetaan M:1 atau M:N, thread pengguna dijadwalkan oleh pustaka thread dan kernel menjadwalkan thread kernel.
+c. Thread kernel tidak harus dikaitkan dengan proses sedangkan setiap thread pengguna milik suatu proses. Thread kernel umumnya lebih mahal untuk dipelihara daripada thread pengguna karena harus diwakili dengan struktur data kernel.
+
+3. Jelaskan tindakan yang diambil oleh kernel untuk context-switch antara thread tingkat kernel.
+Jawaban:
+Context switching antara thread kernel biasanya memerlukan penyimpanan nilai register CPU dari thread yang sedang ditukar dan pemulihan register CPU dari thread baru yang dijadwalkan.
