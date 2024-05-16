@@ -77,16 +77,61 @@ Dikelola oleh Java Virtual Machine (JVM) dan biasanya menggunakan model thread d
 
 #### Thread Implisit
 
-Thread implisit merujuk pada teknik di mana pembuatan dan pengelolaan thread dilakukan oleh kompiler dan pustaka runtime, bukan oleh programmer. Teknik ini membantu mengurangi kompleksitas dalam penanganan thread secara eksplisit. Contoh metode ini termasuk:
 
-- Thread Pools: Sekumpulan thread yang siap untuk menjalankan tugas. Thread pool mempercepat layanan permintaan karena menggunakan thread yang sudah ada daripada membuat thread baru.
-- OpenMP: Kumpulan direktif kompiler dan API untuk pemrograman paralel di lingkungan memori bersama. OpenMP memungkinkan pembagian tugas dalam blok kode yang dapat dijalankan secara paralel.
-- Grand Central Dispatch (GCD): Teknologi dari Apple untuk Mac OS X dan iOS yang memudahkan identifikasi dan pengelolaan bagian kode yang dapat dijalankan secara paralel.
+Thread implisit merujuk pada teknik di mana pembuatan dan pengelolaan thread dilakukan oleh kompiler dan pustaka runtime, bukan oleh programmer secara eksplisit. Pendekatan ini bertujuan untuk menyederhanakan pemrograman paralel dengan mengurangi kompleksitas yang terkait dengan manajemen thread secara manual. Berikut adalah beberapa contoh metode yang menggunakan thread implisit:
 
-#### Threading Issues
+#### 1. Thread Pools
+- **Konsep**: Thread pool adalah kumpulan thread yang telah dibuat sebelumnya dan siap untuk menjalankan tugas. Ketika ada tugas baru yang harus dijalankan, tugas tersebut diambil oleh salah satu thread dalam pool, yang sudah siap bekerja.
+- **Keuntungan**:
+  - **Efisiensi**: Penggunaan kembali thread yang ada lebih efisien daripada membuat thread baru setiap kali ada tugas baru. Ini mengurangi overhead pembuatan dan penghancuran thread.
+  - **Pengelolaan Beban Kerja**: Thread pool dapat mengatur jumlah maksimum thread yang berjalan secara bersamaan, yang membantu dalam pengelolaan sumber daya sistem dan pencegahan oversubscription.
+- **Implementasi**: Banyak bahasa pemrograman dan pustaka menyediakan implementasi thread pool, seperti `java.util.concurrent.ExecutorService` di Java dan `ThreadPoolExecutor` di Python.
 
-- Semantics of `fork()` and `exec()` system calls`: Dalam sistem UNIX, fork() dapat menggandakan thread yang memanggil atau seluruh thread. exec() menggantikan proses yang sedang berjalan termasuk semua thread.
-- Signal Handling : Dalam sistem multi-threaded, sinyal dapat dikirim ke thread tertentu, semua thread, atau thread-thread tertentu saja.
-- Thread cancellation of target thread: Melibatkan penghentian thread sebelum selesai. Ada dua pendekatan utama: pembatalan asinkron (segera) dan pembatalan tertunda (menunggu hingga thread mencapai titik pembatalan).
-- Thread-local storage: Membolehkan setiap thread memiliki salinan data sendiri yang berguna ketika proses pembuatan thread tidak dikendalikan oleh programmer.
-- Scheduler Activations: Model M:M dan two-level membutuhkan komunikasi antara thread pengguna dan kernel untuk menjaga jumlah thread kernel yang dialokasikan secara tepat. Ini sering menggunakan struktur data menengah yang dikenal sebagai lightweight process (LWP).
+#### 2. OpenMP
+- **Konsep**: OpenMP (Open Multi-Processing) adalah standar untuk pemrograman paralel di lingkungan memori bersama. OpenMP menggunakan kumpulan direktif kompiler, pustaka runtime, dan variabel lingkungan untuk mengelola eksekusi paralel.
+- **Keuntungan**:
+  - **Kemudahan Penggunaan**: Programmer dapat menambahkan direktif OpenMP ke kode sekuensial untuk menjadikannya paralel tanpa perlu mengubah struktur kode secara signifikan.
+  - **Kontrol Granularitas**: OpenMP memungkinkan kontrol granularitas pada level loop dan bagian kode lainnya, mempermudah pembagian tugas dalam blok kode.
+- **Implementasi**: OpenMP didukung oleh banyak kompiler utama, seperti GCC, Clang, dan Intel compilers. Contoh direktif OpenMP adalah `#pragma omp parallel for`, yang memparallelkan eksekusi loop.
+
+#### 3. Grand Central Dispatch (GCD)
+- **Konsep**: GCD adalah teknologi dari Apple yang digunakan pada macOS dan iOS untuk memudahkan identifikasi dan pengelolaan bagian kode yang dapat dijalankan secara paralel. GCD menggunakan konsep `dispatch queues` untuk mengelola eksekusi tugas.
+- **Keuntungan**:
+  - **Sederhana dan Efisien**: GCD menyederhanakan pemrograman paralel dengan mengabstraksi manajemen thread. Programmer hanya perlu menambahkan tugas ke antrian yang sesuai, dan GCD mengurus eksekusinya.
+  - **Penskalaan Otomatis**: GCD secara otomatis menyesuaikan jumlah thread berdasarkan beban kerja dan sumber daya yang tersedia, sehingga optimal dalam penggunaan CPU.
+- **Implementasi**: GCD menggunakan dua jenis antrian, yaitu **serial queues** dan **concurrent queues**. Tugas dapat ditambahkan ke antrian ini menggunakan fungsi seperti `dispatch_async` untuk eksekusi asinkron.
+
+
+
+### Threading Issues
+
+Dalam sistem operasi, pengelolaan thread memerlukan perhatian khusus terhadap beberapa isu utama, yang mencakup semantik dari panggilan sistem `fork()` dan `exec()`, penanganan sinyal, pembatalan thread, penyimpanan thread-lokal, dan aktivasi penjadwal. Berikut adalah penjelasan rinci mengenai setiap isu tersebut:
+
+#### Semantics of `fork()` and `exec()` System Calls
+- **`fork()`**: `fork()` adalah panggilan sistem yang digunakan untuk membuat proses baru dengan menggandakan proses yang memanggilnya. Dalam konteks multithreading:
+  - **Menggandakan Satu Thread**: Hanya thread yang memanggil `fork()` yang digandakan dalam proses anak. Ini berarti thread lain di proses induk tidak ada di proses anak, yang bisa menyebabkan masalah jika thread lain memegang sumber daya penting atau mengelola data yang dibutuhkan proses anak.
+  - **Menggandakan Semua Thread**: Semua thread dalam proses induk digandakan di proses anak. Pendekatan ini lebih rumit karena memastikan konsistensi dan sinkronisasi antara thread yang digandakan dapat menjadi tantangan besar.
+- **`exec()`**: `exec()` menggantikan proses yang sedang berjalan dengan program baru. Ketika `exec()` dipanggil:
+  - Semua thread dalam proses digantikan oleh program baru, yang dimulai dengan satu thread utama. Semua thread sebelumnya dihentikan, dan konteks eksekusi baru dimulai dari awal program yang dieksekusi.
+
+#### Signal Handling
+- **Sinyal**: Sinyal adalah metode yang digunakan oleh sistem operasi untuk mengirim pemberitahuan ke proses tentang kejadian tertentu (misalnya, pembagian dengan nol, permintaan penghentian).
+- **Dalam Sistem Multithreaded**: Penanganan sinyal lebih rumit karena sinyal dapat ditujukan ke:
+  - **Thread Tertentu**: Sinyal hanya diterima oleh thread yang spesifik.
+  - **Semua Thread**: Sinyal dikirim ke semua thread dalam proses, meskipun hanya satu thread yang akan menangani sinyal tersebut.
+  - **Thread-thread Tertentu**: Sinyal dikirim ke beberapa thread tertentu yang telah mengatur untuk menangani sinyal tersebut. Hal ini memerlukan mekanisme koordinasi untuk menentukan thread mana yang akan menangani sinyal.
+
+#### Thread Cancellation
+- **Pembatalan Thread**: Proses penghentian thread sebelum selesai menjalankan tugasnya. Ini bisa dilakukan untuk membebaskan sumber daya atau menghentikan eksekusi yang tidak lagi diperlukan.
+- **Pendekatan Utama**:
+  - **Pembatalan Asinkron**: Thread dapat dibatalkan kapan saja, tanpa pemberitahuan. Ini bisa menyebabkan masalah inkonsistensi data atau deadlock karena thread bisa dibatalkan saat sedang memegang sumber daya penting.
+  - **Pembatalan Tertunda**: Thread memeriksa secara berkala apakah ada permintaan pembatalan dan membatalkan diri secara teratur pada titik-titik tertentu yang aman. Pendekatan ini lebih aman karena thread memiliki kesempatan untuk membersihkan sumber daya sebelum berhenti.
+
+#### Thread-Local Storage (TLS)
+- **Penyimpanan Lokal Thread**: Mekanisme yang memungkinkan setiap thread memiliki salinan data sendiri yang bersifat unik untuk thread tersebut.
+- **Kegunaan**: TLS sangat berguna ketika data perlu bersifat thread-specific dan tidak aman untuk diakses oleh thread lain. Misalnya, variabel yang menyimpan informasi sesi untuk setiap thread klien di server web.
+
+#### Scheduler Activations
+- **Aktivasi Penjadwal**: Model komunikasi antara thread pengguna dan kernel untuk mengelola thread secara efisien dalam model Many-to-Many atau two-level.
+- **Lightweight Process (LWP)**: Struktur data menengah yang digunakan untuk mengurangi overhead penjadwalan dan memungkinkan kernel dan perpustakaan thread berkomunikasi.
+- **Mekanisme Aktivasi Penjadwal**: Ketika kernel memutuskan untuk menjadwalkan atau menghentikan thread pengguna, ia mengirim aktivasi penjadwal ke perpustakaan thread pengguna, yang kemudian dapat menyesuaikan peta thread pengguna ke thread kernel. Hal ini memungkinkan perpustakaan thread untuk menjaga sinkronisasi dan efisiensi dalam penggunaan thread kernel.
